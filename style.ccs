@@ -1,0 +1,140 @@
+/* Basic Reset & Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.section-padding {
+    padding: 40px 20px;
+    max-width: 1000px; /* Limit content width for readability */
+    margin: 0 auto; /* Center the content */
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* About Me Section Styles */
+#about-me {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-container {
+    display: flex; /* Enables flexbox layout for children */
+    align-items: center; /* Vertically aligns items in the center */
+    gap: 40px; /* Adds space between text and image */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    justify-content: center; /* Centers items horizontally if there's extra space */
+}
+
+.about-text {
+    flex: 2; /* Gives the text content more flexibility to grow (e.g., takes 2/3 of space) */
+    min-width: 300px; /* Ensures text doesn't become too narrow on intermediate screen sizes */
+    padding-right: 10px; /* A little extra space if text gets close to image */
+}
+
+.about-text h2 {
+    color: #0056b3;
+}
+
+.about-image {
+    flex: 1; /* Gives the image content less flexibility (e.g., takes 1/3 of space) */
+    display: flex; /* Use flex to ensure the image itself is centered within its div */
+    justify-content: center; /* Center the image horizontally within its container */
+    align-items: center; /* Center the image vertically within its container */
+    max-width: 300px; /* Adjust max width of the image container as needed */
+    min-width: 200px; /* Ensure image doesn't get too small */
+}
+
+.about-image img {
+    max-width: 100%; /* Ensures the image scales down within its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Projects Section (Example Styling) */
+#projects {
+    background: #e9e9e9;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Center content within project cards */
+}
+
+.project-card h3 {
+    color: #0056b3;
+    margin-top: 0;
+}
+
+.project-card .project-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .about-text,
+    .about-image {
+        flex: none; /* Reset flex properties */
+        width: 100%; /* Take full width */
+        max-width: unset; /* Remove max-width constraints */
+        padding-right: 0;
+    }
+    .about-image {
+        order: -1; /* Puts the image *above* the text on small screens */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+    header nav ul li {
+        display: block; /* Stack nav items vertically on small screens */
+        margin: 5px 0;
+    }
+}
