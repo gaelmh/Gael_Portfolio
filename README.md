@@ -54,4 +54,4 @@ This is a project I did for my Senior Capstone at DePaul University.
 I am always open to discussing new opportunities, collaborations, or anything data-related!
 - LinkedIn: [Gael Mota Hernandez](https://www.linkedin.com/in/gaelmotahernandez/)
 - Email📧: [gaelmhdz_03@outlook.com](mailto:gaelmhdz_03@outlook.com)
-- Phone :telephone_receiver:: +1 (773) 431-4830
+- Phone📞: +1 (773) 431-4830
