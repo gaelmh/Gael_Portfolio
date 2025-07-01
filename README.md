@@ -1,4 +1,6 @@
 # Gael's Analytics Portfolio.
+## About Me
+
 
 ## Project 1: [NBA Free Throw Accuracy Analysis](https://github.com/gaelmh/NBA-Free-Throw-Accuracy)
 This is a project I did for my Data Visualizations class at DePaul University. It was completed with the aid of two other classmates.
