@@ -1,4 +1,4 @@
-# Gael's Analytics Portfolio.
+# Gael Mota's Analytics Portfolio.
 ## About Me
 
 
