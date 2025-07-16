@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('.nav-button');
     const sections = document.querySelectorAll('.section-content');
 
+    const projectItems = document.querySelectorAll('.project-item');
+    const modal = document.getElementById('project-modal');
+    const closeModalButton = document.querySelector('.close-button');
+    const modalProjectTitle = document.getElementById('modal-project-title');
+    const modalProjectDetails = document.getElementById('modal-project-details');
+    const modalButtonsContainer = modal.querySelector('.modal-buttons');
+
+
     // Function to show a specific section
     function showSection(targetId) {
         sections.forEach(section => {
@@ -48,4 +56,54 @@ document.addEventListener('DOMContentLoaded', function() {
         showSection('about-me');
         document.querySelector('.nav-button[data-section="about-me"]').classList.add('active');
     }
+
+
+    // --- Project Modal Functionality ---
+
+    // Open modal when project item is clicked
+    projectItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project-id');
+            const hiddenDetails = document.getElementById(`details-${projectId}`);
+
+            if (hiddenDetails) {
+                modalProjectTitle.textContent = this.querySelector('h3').textContent;
+                // Clear previous details and buttons
+                modalProjectDetails.innerHTML = '';
+                modalButtonsContainer.innerHTML = '';
+
+                // Clone content to modal (excluding buttons for now)
+                const clonedDetails = hiddenDetails.cloneNode(true);
+                // Remove the hidden-details class from the cloned content to make its children visible
+                clonedDetails.classList.remove('hidden-details');
+                clonedDetails.removeAttribute('id'); // Remove ID to prevent duplicate IDs
+
+                // Extract and append buttons separately
+                const projectButtons = clonedDetails.querySelectorAll('.button');
+                projectButtons.forEach(button => {
+                    modalButtonsContainer.appendChild(button.cloneNode(true));
+                    button.remove(); // Remove from clonedDetails after cloning
+                });
+
+                modalProjectDetails.appendChild(clonedDetails);
+
+                modal.style.display = 'flex'; // Use flex to center the modal
+                document.body.style.overflow = 'hidden'; // Prevent scrolling on body
+            }
+        });
+    });
+
+    // Close modal when close button is clicked
+    closeModalButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Restore body scrolling
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
 });
