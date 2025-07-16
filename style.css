@@ -98,7 +98,7 @@ html {
     width: 150px;
     height: 150px;
     border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Fill the box completely, will crop if aspect ratios differ */
+    object-fit: contain; /* Changed to 'contain' to ensure whole face appears */
     object-position: center; /* Ensure face is centered */
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 15px var(--card-shadow);
@@ -195,7 +195,7 @@ html {
     color: var(--text-muted); /* Actual information */
 }
 
-/* Social Links in Sidebar - Font Awesome Icons */
+/* Social Links in Sidebar - Font Awesome Icons and Custom Logo */
 .social-links-sidebar {
     margin-top: 20px;
     display: flex;
@@ -203,7 +203,7 @@ html {
 }
 
 .social-links-sidebar a {
-    font-size: 1.3em; /* Icon size */
+    font-size: 1.3em; /* Icon size for Font Awesome */
     width: 45px; /* Bigger button area */
     height: 45px; /* Bigger button area */
     border-radius: 50%;
@@ -428,7 +428,7 @@ html {
 .project-item h3 {
     color: var(--accent-color);
     margin-top: 0;
-    font-size: 1.8em;
+    font-size: 1.6em; /* Project titles slightly smaller */
     text-align: center;
     margin-bottom: 15px;
 }
@@ -436,7 +436,7 @@ html {
 .project-thumbnail {
     max-width: 100%;
     height: 200px;
-    object-fit: cover; /* Fill the box completely */
+    object-fit: contain; /* Changed to 'contain' to ensure whole image fits */
     object-position: center;
     border-radius: 8px;
     margin-bottom: 15px;
