@@ -1,12 +1,12 @@
 /* Basic Reset & Global Styles */
 :root {
     --primary-bg: #1a1a1a; /* Dark background */
-    --secondary-bg: #2b2b2b; /* Slightly lighter dark for cards */
+    --secondary-bg: #2b2b2b; /* Slightly lighter dark for cards and sidebar */
     --accent-color: #007bff; /* Primary blue accent */
     --text-light: #e0e0e0; /* Light text for dark backgrounds */
     --text-muted: #a0a0a0; /* Muted text for secondary info */
     --border-color: #444; /* Darker border for separation */
-    --card-shadow: rgba(0, 0, 0, 0.3);
+    --card-shadow: rgba(0, 0, 0, 0.4); /* Stronger shadow for floating effect */
 
     /* Font Families - Uncomment if you use Google Fonts */
     /* --heading-font: 'Montserrat', sans-serif; */
@@ -32,11 +32,12 @@ body {
 /* Portfolio Wrapper - Main Layout */
 #portfolio-wrapper {
     display: flex;
+    justify-content: center; /* Center the whole wrapper */
     min-height: 100vh;
-    max-height: 100vh; /* Keep it within viewport height */
+    padding: 30px; /* Padding around the whole wrapper */
 }
 
-/* Sidebar Styling */
+/* Sidebar Styling - Floating with Rounded Corners */
 .sidebar {
     width: 300px; /* Fixed width for sidebar */
     background-color: var(--secondary-bg);
@@ -44,8 +45,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 0 10px var(--card-shadow);
+    box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
     overflow-y: auto; /* Allow sidebar content to scroll if it overflows */
+    border-radius: 15px; /* Rounded corners for the sidebar */
+    position: sticky; /* Makes it stick within its parent container's scroll */
+    top: 30px; /* Aligned with top padding */
+    align-self: flex-start; /* Stick to the start of the cross-axis */
+    margin-right: 30px; /* Space between sidebar and content */
 }
 
 .profile-card {
@@ -56,8 +62,9 @@ body {
 .sidebar-profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    object-fit: contain; /* Show entire image, even if it adds letterboxing */
+    object-position: center; /* Ensure face is centered */
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 15px var(--card-shadow);
     margin-bottom: 15px;
@@ -75,7 +82,7 @@ body {
     color: var(--text-muted);
 }
 
-/* Sidebar Navigation */
+/* Sidebar Navigation - Centered Buttons */
 .main-nav-sidebar ul {
     list-style: none;
     margin: 0;
@@ -93,7 +100,7 @@ body {
     color: var(--text-light);
     padding: 12px 20px;
     border-radius: 8px;
-    text-align: left;
+    text-align: center; /* Centered text */
     text-decoration: none;
     font-family: var(--heading-font);
     font-weight: 600;
@@ -112,7 +119,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-/* Contact Info in Sidebar */
+/* Contact Info in Sidebar - Bigger Icons, Bold Title, Info Below */
 .contact-info {
     width: 100%;
     margin-top: 40px;
@@ -122,18 +129,38 @@ body {
 
 .info-item {
     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    align-items: center; /* Align icon and text vertically */
+    margin-bottom: 18px; /* More space between items */
     color: var(--text-muted);
 }
 
 .info-item .icon {
-    font-size: 1.2em;
-    margin-right: 10px;
+    font-size: 1.8em; /* Bigger icon */
+    margin-right: 15px; /* More space to the right of icon */
     color: var(--accent-color);
+    width: 30px; /* Fixed width for icon to align text */
+    text-align: center;
 }
 
-/* Social Links in Sidebar */
+.info-item div {
+    display: flex;
+    flex-direction: column; /* Stack title and detail */
+    align-items: flex-start;
+}
+
+.info-title {
+    font-weight: bold;
+    color: white; /* Bold white letters */
+    font-size: 0.9em;
+    margin-bottom: 2px; /* Small space between title and detail */
+}
+
+.info-detail {
+    font-size: 1em;
+    color: var(--text-muted); /* Actual information */
+}
+
+/* Social Links in Sidebar - Font Awesome Icons */
 .social-links-sidebar {
     margin-top: 20px;
     display: flex;
@@ -141,11 +168,9 @@ body {
 }
 
 .social-links-sidebar a {
-    font-family: var(--heading-font); /* Using a different font for the 'in', 'gh' text */
-    font-weight: 700;
-    font-size: 1.3em;
-    width: 40px;
-    height: 40px;
+    font-size: 1.3em; /* Icon size */
+    width: 45px; /* Bigger button area */
+    height: 45px; /* Bigger button area */
     border-radius: 50%;
     background-color: var(--primary-bg);
     color: var(--accent-color);
@@ -165,15 +190,17 @@ body {
 /* Content Area Styling */
 .content-area {
     flex-grow: 1; /* Takes up remaining space */
-    padding: 30px;
+    max-width: 900px; /* Limit content width */
+    background-color: var(--primary-bg); /* Background for content area */
+    border-radius: 15px; /* Rounded corners for content area */
+    box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
+    padding: 30px 40px; /* Adjusted padding */
     overflow-y: auto; /* Allows content to scroll independently */
-    position: relative; /* For section absolute positioning if needed */
+    position: relative;
 }
 
 .container {
-    max-width: 900px; /* Slightly narrower content for focus */
-    margin: 0 auto;
-    padding: 0 15px;
+    padding: 0; /* Remove container padding as content-area has it */
 }
 
 /* Section Content - Hidden by Default */
@@ -192,7 +219,7 @@ body {
 
 .section-content h2 {
     font-family: var(--heading-font);
-    font-size: 2.8em;
+    font-size: 3em; /* Slightly bigger title */
     color: var(--text-light);
     margin-bottom: 30px;
     position: relative;
@@ -258,118 +285,22 @@ body {
     color: var(--text-muted);
 }
 
-
-/* Project Section Styles */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+/* Merged Skills Section */
+.merged-skills-section {
+    margin-top: 60px; /* Space from What I'm Doing */
 }
 
-.project-item {
-    background-color: var(--secondary-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px var(--card-shadow);
-    padding: 25px;
+.merged-skills-section h2 {
+    font-size: 2.2em; /* Slightly smaller than main section title */
+    margin-bottom: 30px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--card-shadow);
+.merged-skills-section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.project-item h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-    font-size: 1.8em;
-    text-align: center; /* Override section h2 alignment */
-}
-
-.project-thumbnail {
-    max-width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border: 1px solid var(--border-color);
-}
-
-.project-summary {
-    font-size: 0.95em;
-    color: var(--text-light);
-    margin-bottom: 15px;
-    flex-grow: 1;
-    text-align: left;
-}
-
-.project-item p strong {
-    color: var(--accent-color);
-}
-
-.project-buttons {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-}
-
-.button:hover {
-    background-color: #0056b3;
-    text-decoration: none;
-}
-
-
-/* Experience Section Styles */
-.experience-item {
-    background-color: var(--secondary-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--card-shadow);
-    margin-bottom: 25px;
-}
-
-.experience-item h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.6em;
-    text-align: left; /* Override section h2 alignment */
-}
-
-.experience-item .date {
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-.experience-item ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding: 0;
-    color: var(--text-light);
-}
-
-.experience-item li {
-    margin-bottom: 8px;
-}
-
-/* Skills and Tools Section */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -412,107 +343,276 @@ body {
 }
 
 
-/* Contact Me Section */
-.contact-intro {
+/* Project Section Styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    padding: 25px;
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* Indicate clickable */
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.project-item h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.project-thumbnail {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain; /* Show entire image */
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.project-item .hidden-details {
+    display: none; /* Hide details initially, JS will copy to modal */
+}
+
+/* Experience Section Styles - Remove bullet point from first line */
+.experience-item {
+    background-color: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.experience-item h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.6em;
+    text-align: left;
+}
+
+.experience-item .date {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.experience-item ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
     color: var(--text-light);
 }
 
-.contact-options {
-    text-align: center;
-    margin-bottom: 30px;
+.experience-item ul li {
+    margin-bottom: 8px;
+    padding-left: 20px; /* Indent text */
+    position: relative;
 }
 
-.contact-button {
-    font-size: 1.1em;
-    padding: 12px 30px;
+.experience-item ul li:not(:first-child)::before { /* Add bullet to all but the first line */
+    content: "\2022"; /* Unicode for bullet point */
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1; /* Align with text */
 }
 
-/* Contact Form Styling (if used) */
+
+/* Contact Me Section - Form as per image */
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto 30px auto;
+    max-width: 700px; /* Wider form as per image */
+    margin: 0 auto;
     background-color: var(--secondary-bg);
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--card-shadow);
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--text-light);
+.contact-form h2 {
+    text-align: left; /* Align "Contact Form" title left */
+    font-size: 2.5em; /* Match image size */
+    margin-bottom: 30px;
+}
+
+.contact-form h2::after {
+    left: 0; /* Align underline left */
+    transform: none;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+    width: 100%; /* Take full width */
+    padding: 15px 20px; /* More padding for bigger fields */
+    margin-bottom: 0; /* No margin-bottom here due to form-row gap */
     border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px; /* Rounded corners */
     box-sizing: border-box;
     font-family: var(--body-font);
-    font-size: 1em;
-    background-color: var(--primary-bg);
+    font-size: 1.1em; /* Larger font */
+    background-color: var(--primary-bg); /* Dark input background */
     color: var(--text-light);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted); /* Muted placeholder text */
+    opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 150px; /* Taller textarea */
+    margin-bottom: 25px;
 }
 
-.contact-form button {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
+.send-message-button {
+    background-color: var(--secondary-bg); /* Match input background */
+    color: var(--accent-color); /* Blue text */
+    padding: 15px 30px;
+    border: 1px solid var(--accent-color); /* Blue border */
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
-.social-links-content {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.social-links-content h3 {
-    font-size: 1.6em;
-    color: var(--text-light);
-    margin-bottom: 15px;
-    text-align: center; /* Override section h2 alignment */
-}
-
-.social-links-content a {
-    display: inline-block;
-    margin: 0 10px;
-    color: var(--accent-color);
-    font-weight: bold;
     font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    float: right; /* Float to right as per image */
+}
+
+.send-message-button:hover {
+    background-color: var(--accent-color); /* Fill with blue on hover */
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Modal (Popup) Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Optional: blur background */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--secondary-bg);
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px; /* Max width for readability */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.7);
+    position: relative;
+    color: var(--text-light);
+    max-height: 90vh; /* Limit height */
+    overflow-y: auto; /* Scrollable content inside modal */
+}
+
+.modal-content h3 {
+    color: var(--accent-color);
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.modal-content p strong {
+    color: var(--accent-color);
+}
+
+.modal-content .button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+.close-button {
+    color: var(--text-muted);
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.social-links-content a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+.close-button:hover,
+.close-button:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.modal-project-details {
+    /* Style for the project details inside the modal */
+    margin-top: 20px;
+}
+
+.modal-project-details p {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     #portfolio-wrapper {
         flex-direction: column; /* Stack sidebar and content on smaller screens */
+        padding: 0; /* Remove padding around wrapper */
         min-height: auto;
         max-height: none;
     }
@@ -525,6 +625,11 @@ body {
         flex-wrap: wrap; /* Allow items to wrap */
         justify-content: center;
         overflow-y: visible; /* No scrollbar on sidebar */
+        border-radius: 0; /* No rounded corners on top/bottom when full width */
+        margin-right: 0; /* No margin when stacked */
+        position: static; /* No sticky behavior */
+        top: auto;
+        align-self: auto;
     }
 
     .profile-card {
@@ -577,6 +682,8 @@ body {
     .content-area {
         padding: 20px 15px;
         overflow-y: visible; /* Let content scroll naturally */
+        border-radius: 0; /* No rounded corners when full width */
+        box-shadow: none; /* No shadow when stacked */
     }
 
     .section-content h2 {
@@ -595,5 +702,19 @@ body {
 
     .service-card, .project-item, .experience-item, .skills-category-card {
         padding: 20px;
+    }
+
+    .contact-form .form-row {
+        flex-direction: column; /* Stack name and email on small screens */
+        gap: 0; /* Remove gap */
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        margin-bottom: 20px; /* Re-add margin bottom */
+    }
+    .send-message-button {
+        float: none; /* No float on small screens */
+        width: 100%; /* Full width button */
     }
 }
