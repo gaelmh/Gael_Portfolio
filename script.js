@@ -75,10 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalProjectDetails.innerHTML = '';
                 modalButtonsContainer.innerHTML = '';
 
-                // Clone content to modal (excluding buttons for now)
+                // Clone content to modal
                 // We clone children nodes to get only the p tags
                 Array.from(hiddenDetailsSpan.children).forEach(child => {
-                    if (!child.matches('a.button')) { // Exclude anchor tags if they were mistakenly left from old structure
+                    // Check if the child is an element node and not a script or style tag (though unlikely here)
+                    if (child.nodeType === Node.ELEMENT_NODE) {
                         modalProjectDetails.appendChild(child.cloneNode(true));
                     }
                 });
