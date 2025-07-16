@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.classList.add('active'); // Show the target section
+            // Scroll content area to top when section changes
+            document.querySelector('.content-area').scrollTop = 0;
         }
     }
 
@@ -64,28 +66,44 @@ document.addEventListener('DOMContentLoaded', function() {
     projectItems.forEach(item => {
         item.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project-id');
-            const hiddenDetails = document.getElementById(`details-${projectId}`);
+            const hiddenDetailsSpan = document.getElementById(`details-${projectId}`);
 
-            if (hiddenDetails) {
+            if (hiddenDetailsSpan) {
                 modalProjectTitle.textContent = this.querySelector('h3').textContent;
+
                 // Clear previous details and buttons
                 modalProjectDetails.innerHTML = '';
                 modalButtonsContainer.innerHTML = '';
 
                 // Clone content to modal (excluding buttons for now)
-                const clonedDetails = hiddenDetails.cloneNode(true);
-                // Remove the hidden-details class from the cloned content to make its children visible
-                clonedDetails.classList.remove('hidden-details');
-                clonedDetails.removeAttribute('id'); // Remove ID to prevent duplicate IDs
-
-                // Extract and append buttons separately
-                const projectButtons = clonedDetails.querySelectorAll('.button');
-                projectButtons.forEach(button => {
-                    modalButtonsContainer.appendChild(button.cloneNode(true));
-                    button.remove(); // Remove from clonedDetails after cloning
+                // We clone children nodes to get only the p tags
+                Array.from(hiddenDetailsSpan.children).forEach(child => {
+                    if (!child.matches('a.button')) { // Exclude anchor tags if they were mistakenly left from old structure
+                        modalProjectDetails.appendChild(child.cloneNode(true));
+                    }
                 });
 
-                modalProjectDetails.appendChild(clonedDetails);
+                // Create GitHub button
+                const githubUrl = hiddenDetailsSpan.getAttribute('data-github-url');
+                if (githubUrl) {
+                    const githubButton = document.createElement('a');
+                    githubButton.href = githubUrl;
+                    githubButton.target = '_blank';
+                    githubButton.classList.add('button'); // Apply button style
+                    githubButton.innerHTML = '<i class="fab fa-github"></i> <span>View on GitHub</span>';
+                    modalButtonsContainer.appendChild(githubButton);
+                }
+
+                // Create LinkedIn button
+                const linkedinUrl = hiddenDetailsSpan.getAttribute('data-linkedin-url');
+                if (linkedinUrl) {
+                    const linkedinButton = document.createElement('a');
+                    linkedinButton.href = linkedinUrl;
+                    linkedinButton.target = '_blank';
+                    linkedinButton.classList.add('button'); // Apply button style
+                    linkedinButton.innerHTML = '<i class="fab fa-linkedin-in"></i> <span>LinkedIn Write-up</span>';
+                    modalButtonsContainer.appendChild(linkedinButton);
+                }
 
                 modal.style.display = 'flex'; // Use flex to center the modal
                 document.body.style.overflow = 'hidden'; // Prevent scrolling on body
