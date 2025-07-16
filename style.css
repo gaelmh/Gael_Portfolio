@@ -1,1 +1,433 @@
+/* Basic Reset & Global Styles */
+:root {
+    --primary-color: #007bff; /* A nice blue for accents */
+    --secondary-color: #6c757d; /* Grey for secondary text */
+    --background-light: #f8f9fa; /* Light background */
+    --background-dark: #343a40; /* Dark background for sections/nav */
+    --text-color-dark: #212529; /* Dark text for light backgrounds */
+    --text-color-light: #f8f9fa; /* Light text for dark backgrounds */
+    --border-color: #dee2e6;
+    --heading-font: 'Arial', sans-serif; /* Or a Google Font you prefer */
+    --body-font: 'Helvetica', sans-serif; /* Or a Google Font you prefer */
+}
 
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light); /* Light background for the whole page */
+    color: var(--text-color-dark);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Bar */
+.main-nav {
+    background-color: var(--background-dark); /* Dark background */
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* Makes the nav bar stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: var(--text-color-light); /* White text for nav links */
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    display: block; /* Make the whole padding clickable */
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: var(--primary-color); /* Highlight on hover */
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section (Optional) */
+.hero-section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    /* You can add a background image here */
+    /* background-image: url('path/to/hero-background.jpg'); */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color); /* Separator between sections */
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* About Me Section */
+#about-me .about-content {
+    display: flex;
+    flex-direction: column; /* Stack image and text on small screens */
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.profile-picture {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%; /* Circular image */
+    border: 5px solid var(--primary-color); /* Border around image */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+@media (min-width: 768px) {
+    #about-me .about-content {
+        flex-direction: row; /* Side-by-side on larger screens */
+        text-align: left;
+    }
+    .profile-picture {
+        margin-right: 30px; /* Space between image and text */
+        margin-bottom: 0;
+    }
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.project-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.project-thumbnail {
+    max-width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop if necessary */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.project-summary {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows summary to take available space */
+}
+
+.project-item p strong {
+    color: var(--text-color-dark);
+}
+
+.project-item .button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-item .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    text-decoration: none;
+}
+
+/* Experience Section */
+.experience-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.experience-item .date {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.experience-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.experience-item li {
+    margin-bottom: 8px;
+    color: var(--text-color-dark);
+}
+
+/* Skills and Tools Section */
+.skills-category {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.skills-category h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.skills-category ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow skills to wrap */
+    gap: 10px; /* Space between skill items */
+}
+
+.skills-category li {
+    background-color: #e9ecef; /* Light grey tag background */
+    color: var(--text-color-dark);
+    padding: 8px 15px;
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Contact Me Section */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+.contact-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
+    font-family: var(--body-font);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .main-nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+    }
+    .main-nav li {
+        margin: 10px 0; /* Space between stacked nav items */
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column for projects on small screens */
+    }
+}
