@@ -6,7 +6,8 @@
     <title>Gael Mota Hernandez - Data Science Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
 
     <div id="portfolio-wrapper">
@@ -22,27 +23,36 @@
                     <li><a href="#about-me" class="nav-button active" data-section="about-me">About Me</a></li>
                     <li><a href="#projects" class="nav-button" data-section="projects">Projects</a></li>
                     <li><a href="#experience" class="nav-button" data-section="experience">Experience</a></li>
-                    <li><a href="#skills-and-tools" class="nav-button" data-section="skills-and-tools">Skills & Tools</a></li>
                     <li><a href="#contact-me" class="nav-button" data-section="contact-me">Contact Me</a></li>
                 </ul>
             </nav>
 
             <div class="contact-info">
                 <div class="info-item">
-                    <span class="icon">✉️</span>
-                    <span>gaelmhdz_03@outlook.com</span>
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <div>
+                        <span class="info-title">EMAIL</span>
+                        <span class="info-detail">gaelmhdz_03@outlook.com</span>
+                    </div>
                 </div>
                 <div class="info-item">
-                    <span class="icon">📞</span>
-                    <span>+1 (123) 456-7890</span> </div>
+                    <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                    <div>
+                        <span class="info-title">PHONE</span>
+                        <span class="info-detail">+1 (123) 456-7890</span> </div>
+                </div>
                 <div class="info-item">
-                    <span class="icon">📍</span>
-                    <span>Chicago, IL, USA</span> </div>
+                    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div>
+                        <span class="info-title">LOCATION</span>
+                        <span class="info-detail">Chicago, IL, USA</span> </div>
+                </div>
             </div>
 
             <div class="social-links-sidebar">
-                <a href="https://www.linkedin.com/in/gaelmotahernandez/" target="_blank" title="LinkedIn">in</a>
-                <a href="https://github.com/gaelmh" target="_blank" title="GitHub">gh</a>
+                <a href="https://www.linkedin.com/in/gaelmotahernandez/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/gaelmh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.analysthive.com/" target="_blank" title="Analyst Hive"><i class="fas fa-hive"></i></a> <a href="https://www.instagram.com/your-instagram-profile/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
         </aside>
 
@@ -74,6 +84,47 @@
                             <p>Experience with cloud platforms for scalable data solutions and deployment.</p>
                         </div>
                     </div>
+
+                    <div class="merged-skills-section">
+                        <h2>Skills and Tools</h2>
+                        <div class="skills-grid">
+                            <div class="skills-category-card">
+                                <h3>Programming Languages</h3>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>R</li>
+                                    <li>Java</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                            <div class="skills-category-card">
+                                <h3>Database and Cloud</h3>
+                                <ul>
+                                    <li>MySQL</li>
+                                    <li>AWS</li>
+                                    <li>Google Colab</li>
+                                </ul>
+                            </div>
+                            <div class="skills-category-card">
+                                <h3>Data Visualization</h3>
+                                <ul>
+                                    <li>Tableau</li>
+                                    <li>Ggplot2</li>
+                                    <li>Matplotlib</li>
+                                    <li>Seaborn</li>
+                                </ul>
+                            </div>
+                            <div class="skills-category-card">
+                                <h3>Other Tools</h3>
+                                <ul>
+                                    <li>Git/GitHub</li>
+                                    <li>Shiny (R & Python)</li>
+                                    <li>Google Apps Script</li>
+                                    <li>Microsoft Office (Excel)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -81,69 +132,69 @@
                 <div class="container">
                     <h2>Projects</h2>
                     <div class="project-grid">
-                        <div class="project-item">
+                        <div class="project-item" data-project-id="nba-free-throw">
                             <h3>NBA Free Throw Accuracy</h3>
                             <img src="Visualizations/Thumbnails/FreeThrowProjectThumbnail.jpg" alt="NBA Free Throw Accuracy Thumbnail" class="project-thumbnail">
-                            <p class="project-summary">Through data visualizations, this project investigates NBA player statistics from the 1997-98 to the 2021-22 seasons to analyze factors affecting free throw accuracy and its correlation with MVP status in the NBA.</p>
-                            <p><strong>Technologies:</strong> R (tidyverse, GGally, corrplot, magrittr, ggforce, reshapeggplot)</p>
-                            <p><strong>Data Source:</strong> The data was taken from the "NBA Player Stats (1998-2022)" dataset from Kaggle.</p>
-                            <p><strong>Techniques:</strong> Data Filtering, and Visualizations.</p>
-                            <div class="project-buttons">
+                            <span class="hidden-details" id="details-nba-free-throw">
+                                <p class="project-summary">Through data visualizations, this project investigates NBA player statistics from the 1997-98 to the 2021-22 seasons to analyze factors affecting free throw accuracy and its correlation with MVP status in the NBA.</p>
+                                <p><strong>Technologies:</strong> R (tidyverse, GGally, corrplot, magrittr, ggforce, reshapeggplot)</p>
+                                <p><strong>Data Source:</strong> The data was taken from the "NBA Player Stats (1998-2022)" dataset from Kaggle.</p>
+                                <p><strong>Techniques:</strong> Data Filtering, and Visualizations.</p>
                                 <a href="https://github.com/gaelmh/NBA-Free-Throw-Accuracy" target="_blank" class="button">View on GitHub</a>
                                 <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117327280/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" target="_blank" class="button">LinkedIn Write-up</a>
-                            </div>
+                            </span>
                         </div>
 
-                        <div class="project-item">
+                        <div class="project-item" data-project-id="healthcare-costs">
                             <h3>Understanding Healthcare Costs – A Generalized Approach</h3>
                             <img src="Visualizations/Thumbnails/HealthcareCostsProjectThumbnail.jpg" alt="Understanding Healthcare Costs Project Thumbnail" class="project-thumbnail">
-                            <p class="project-summary">Through generalized linear models, this project investigates healthcare data to analyze the impact of demographic and lifestyle factors on healthcare costs.</p>
-                            <p><strong>Technologies:</strong> R (tidyverse, caret, lmtest, broom, car, MASS, fastDummies)</p>
-                            <p><strong>Data Source:</strong> The data was taken from the “Medical Costs Personal” dataset from Kaggle.</p>
-                            <p><strong>Techniques:</strong> Linear Regression, Logistic Regression, and Analysis of Variance (ANOVA).</p>
-                            <div class="project-buttons">
+                            <span class="hidden-details" id="details-healthcare-costs">
+                                <p class="project-summary">Through generalized linear models, this project investigates healthcare data to analyze the impact of demographic and lifestyle factors on healthcare costs.</p>
+                                <p><strong>Technologies:</strong> R (tidyverse, caret, lmtest, broom, car, MASS, fastDummies)</p>
+                                <p><strong>Data Source:</strong> The data was taken from the “Medical Costs Personal” dataset from Kaggle.</p>
+                                <p><strong>Techniques:</strong> Linear Regression, Logistic Regression, and Analysis of Variance (ANOVA).</p>
                                 <a href="https://github.com/gaelmh/Understanding-Healthcare-Costs#understainding-healthcare-costs" target="_blank" class="button">View on GitHub</a>
                                 <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117659564/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" target="_blank" class="button">LinkedIn Write-up</a>
-                            </div>
+                            </span>
                         </div>
 
-                        <div class="project-item">
+                        <div class="project-item" data-project-id="boot-brand">
                             <h3>Boot Brand Preference Among Soccer Player – A Machine Learning Approach</h3>
                             <img src="Visualizations/Thumbnails/SoccerBootBrandPreferenceProjectThumbnail.jpg" alt="Boot Brand Preference Project Thumbnail" class="project-thumbnail">
-                            <p class="project-summary">Leveraging machine learning modeling, this project investigates soccer boots data to predict the preferred boot brand of a given soccer player, and identify the key factors influencing their preference.</p>
-                            <p><strong>Technologies:</strong> Python (pandas, numpy, collections, scikit-learn, joblib, imblearn, sys, math, urllib, os, matplotlib, seaborn)</p>
-                            <p><strong>Data Source:</strong> The data was taken from the “Football Boots” dataset from Kaggle.</p>
-                            <p><strong>Techniques:</strong> Class Balancing, Feature Selection, and Machine Learning Modeling.</p>
-                            <div class="project-buttons">
+                            <span class="hidden-details" id="details-boot-brand">
+                                <p class="project-summary">Leveraging machine learning modeling, this project investigates soccer boots data to predict the preferred boot brand of a given soccer player, and identify the key factors influencing their preference.</p>
+                                <p><strong>Technologies:</strong> Python (pandas, numpy, collections, scikit-learn, joblib, imblearn, sys, math, urllib, os, matplotlib, seaborn)</p>
+                                <p><strong>Data Source:</strong> The data was taken from the “Football Boots” dataset from Kaggle.</p>
+                                <p><strong>Techniques:</strong> Class Balancing, Feature Selection, and Machine Learning Modeling.</p>
                                 <a href="https://github.com/gaelmh/Boot-Brand-Preference" target="_blank" class="button">View on GitHub</a>
                                 <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117948171/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" target="_blank" class="button">LinkedIn Write-up</a>
-                            </div>
+                            </span>
                         </div>
 
-                        <div class="project-item">
+                        <div class="project-item" data-project-id="soccer-xi">
                             <h3>Soccer Starting XI Prediction</h3>
                             <img src="Visualizations/Thumbnails/SoccerStartingXIProjectThumbnail.jpg" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
-                            <p class="project-summary">Leveraging AWS tools and machine learning models, this project investigates soccer match data to predict whether a soccer player will be in the starting lineup for an upcoming game.</p>
-                            <p><strong>Technologies:</strong> Python (pandas, numPy, scikit-learn, imblearn, matplotlib, seaborn, boto3), Apache Spark (PySpark), AWS (S3, Athena)</p>
-                            <p><strong>Data Source:</strong> The data was taken from the “Football Data from TransferMarkt” dataset from Kaggle.</p>
-                            <p><strong>Techniques:</strong> AWS tools (EMR, S3, and Athena), Class Balancing, Data Staging and Querying, and Modeling.</p>
-                            <div class="project-buttons">
+                            <span class="hidden-details" id="details-soccer-xi">
+                                <p class="project-summary">Leveraging AWS tools and machine learning models, this project investigates soccer match data to predict whether a soccer player will be in the starting lineup for an upcoming game.</p>
+                                <p><strong>Technologies:</strong> Python (pandas, numPy, scikit-learn, imblearn, matplotlib, seaborn, boto3), Apache Spark (PySpark), AWS (S3, Athena)</p>
+                                <p><strong>Data Source:</strong> The data was taken from the “Football Data from TransferMarkt” dataset from Kaggle.</p>
+                                <p><strong>Techniques:</strong> AWS tools (EMR, S3, and Athena), Class Balancing, Data Staging and Querying, and Modeling.</p>
                                 <a href="https://github.com/gaelmh/Soccer-Starting-XI" target="_blank" class="button">View on GitHub</a>
                                 <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1733244193743/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" target="_blank" class="button">LinkedIn Write-up</a>
-                            </div>
+                            </span>
                         </div>
 
-                        <div class="project-item">
+                        <div class="project-item" data-project-id="predicting-healthcare">
                             <h3>Predicting Healthcare Costs – A Machine Learning Approach</h3>
                             <img src="Visualizations/Thumbnails/HospitalBalancePredictionProjectThumbnail.jpg" alt="Predicting Healthcare Costs Project Thumbnail" class="project-thumbnail">
-                            <p class="project-summary">Leveraging Google Colab's GPU-Acceleration, machine learning modeling, and interactive web development, this project investigates New York healthcare data to estimate total hospital charges for a patient.</p>
-                            <p><strong>Technologies:</strong> Python (pandas, numPy, SciPy, matplotlib, seaborn, scikit-learn, cuML, LightGBM, XGBoost, TensorFlow, Shiny, IPython/Jupyter, Joblib, os, json, itertools), GPU-accelerated Computing (cuDF, cuPY)</p>
-                            <p><strong>Data Source:</strong> The data was taken from the New York Government Health Data website.</p>
-                            <p><strong>Techniques:</strong> Google Colab’s GPU acceleration, Scaling, Encoding, Dimensionality Reduction, and Modeling.</p>
-                            <div class="project-buttons">
+                            <span class="hidden-details" id="details-predicting-healthcare">
+                                <p class="project-summary">Leveraging Google Colab's GPU-Acceleration, machine learning modeling, and interactive web development, this project investigates New York healthcare data to estimate total hospital charges for a patient.</p>
+                                <p><strong>Technologies:</strong> Python (pandas, numPy, SciPy, matplotlib, seaborn, scikit-learn, cuML, LightGBM, XGBoost, TensorFlow, Shiny, IPython/Jupyter, Joblib, os, json, itertools), GPU-accelerated Computing (cuDF, cuPY)</p>
+                                <p><strong>Data Source:</strong> The data was taken from the New York Government Health Data website.</p>
+                                <p><strong>Techniques:</strong> Google Colab’s GPU acceleration, Scaling, Encoding, Dimensionality Reduction, and Modeling.</p>
                                 <a href="https://github.com/gaelmh/Predicting-Healthcare-Costs" target="_blank" class="button">View on GitHub</a>
                                 <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1743566649828/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" target="_blank" class="button">LinkedIn Write-up</a>
-                            </div>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -188,66 +239,34 @@
                 </div>
             </section>
 
-            <section id="skills-and-tools" class="section-content">
-                <div class="container">
-                    <h2>Skills and Tools</h2>
-                    <div class="skills-grid">
-                        <div class="skills-category-card">
-                            <h3>Programming Languages</h3>
-                            <ul>
-                                <li>Python</li>
-                                <li>R</li>
-                                <li>Java</li>
-                                <li>SQL</li>
-                            </ul>
-                        </div>
-                        <div class="skills-category-card">
-                            <h3>Database and Cloud</h3>
-                            <ul>
-                                <li>MySQL</li>
-                                <li>AWS</li>
-                                <li>Google Colab</li>
-                            </ul>
-                        </div>
-                        <div class="skills-category-card">
-                            <h3>Data Visualization</h3>
-                            <ul>
-                                <li>Tableau</li>
-                                <li>Ggplot2</li>
-                                <li>Matplotlib</li>
-                                <li>Seaborn</li>
-                            </ul>
-                        </div>
-                        <div class="skills-category-card">
-                            <h3>Other Tools</h3>
-                            <ul>
-                                <li>Git/GitHub</li>
-                                <li>Shiny (R & Python)</li>
-                                <li>Google Apps Script</li>
-                                <li>Microsoft Office (Excel)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section id="contact-me" class="section-content">
                 <div class="container">
-                    <h2>Let's Collaborate!</h2>
-                    <p class="contact-intro">I'm always open to new opportunities and discussions. Feel free to reach out!</p>
-
-                    <div class="contact-options">
-                        <a href="mailto:gaelmhdz_03@outlook.com" class="button contact-button">Send me an Email</a>
+                    <h2>Contact Form</h2>
+                    <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+                        <div class="form-row">
+                            <input type="text" id="full-name" name="name" placeholder="Full name" required>
+                            <input type="email" id="email-address" name="_replyto" placeholder="Email address" required>
                         </div>
-
-                    <div class="social-links-content">
-                        <h3>Find me on:</h3>
-                        <a href="https://www.linkedin.com/in/gaelmotahernandez/" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/gaelmh" target="_blank">GitHub</a>
-                        </div>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <textarea id="your-message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="send-message-button">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </section>
         </main>
+    </div>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-project-title"></h3>
+            <div id="modal-project-details"></div>
+            <div class="modal-buttons">
+                </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
