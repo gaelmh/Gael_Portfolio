@@ -21,20 +21,26 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%; /* Ensure html and body take full height */
+    overflow: hidden; /* Prevent default scrolling on html/body */
+}
+
 body {
     font-family: var(--body-font);
     line-height: 1.6;
     background-color: var(--primary-bg);
     color: var(--text-light);
-    overflow-y: hidden; /* Prevent body scroll, content-area handles it */
 }
 
 /* Portfolio Wrapper - Main Layout */
 #portfolio-wrapper {
     display: flex;
     justify-content: center; /* Center the whole wrapper */
-    min-height: 100vh;
+    min-height: 100%; /* Ensure wrapper takes at least full viewport height */
     padding: 30px; /* Padding around the whole wrapper */
+    gap: 30px; /* Space between sidebar and content area */
+    overflow-y: auto; /* Allow the entire portfolio wrapper to scroll if content exceeds viewport */
 }
 
 /* Sidebar Styling - Floating with Rounded Corners */
@@ -48,10 +54,11 @@ body {
     box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
     overflow-y: auto; /* Allow sidebar content to scroll if it overflows */
     border-radius: 15px; /* Rounded corners for the sidebar */
-    position: sticky; /* Makes it stick within its parent container's scroll */
-    top: 30px; /* Aligned with top padding */
-    align-self: flex-start; /* Stick to the start of the cross-axis */
-    margin-right: 30px; /* Space between sidebar and content */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    max-height: calc(100vh - 60px); /* Limit sidebar height to fit within viewport padding */
+    position: sticky; /* Make it sticky within its parent scroll container */
+    top: 30px; /* Aligned with top padding of wrapper */
+    align-self: flex-start; /* Align to the top of the flex container */
 }
 
 .profile-card {
@@ -63,7 +70,7 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%; /* Circular image */
-    object-fit: contain; /* Show entire image, even if it adds letterboxing */
+    object-fit: cover; /* Fill the box completely, will crop if aspect ratios differ */
     object-position: center; /* Ensure face is centered */
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 15px var(--card-shadow);
@@ -187,20 +194,23 @@ body {
 }
 
 
-/* Content Area Styling */
+/* Content Area Styling - Finishes close to last info & Scrollable */
 .content-area {
-    flex-grow: 1; /* Takes up remaining space */
-    max-width: 900px; /* Limit content width */
-    background-color: var(--primary-bg); /* Background for content area */
+    flex-grow: 1; /* Allows it to take available width */
+    flex-shrink: 1; /* Allows it to shrink if needed */
+    max-width: 900px; /* Limit content width for readability */
+    background-color: var(--secondary-bg); /* Background for content area box */
     border-radius: 15px; /* Rounded corners for content area */
     box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
-    padding: 30px 40px; /* Adjusted padding */
-    overflow-y: auto; /* Allows content to scroll independently */
-    position: relative;
+    padding: 30px 40px; /* Padding inside content box */
+    overflow-y: auto; /* Allows content within this box to scroll independently */
+    max-height: calc(100vh - 60px); /* Limit content area height to fit within viewport padding */
+    align-self: flex-start; /* Align to the top of the flex container */
 }
 
 .container {
-    padding: 0; /* Remove container padding as content-area has it */
+    /* No padding needed here as content-area handles it */
+    padding: 0;
 }
 
 /* Section Content - Hidden by Default */
@@ -262,7 +272,7 @@ body {
 }
 
 .service-card {
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg); /* Darker background for service cards */
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 15px var(--card-shadow);
@@ -308,10 +318,16 @@ body {
 }
 
 .skills-category-card {
-    background-color: var(--secondary-bg);
-    padding: 25px;
+    background-color: var(--primary-bg); /* Darker background for skills cards */
+    padding: 15px; /* Reduced padding for less height */
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--card-shadow);
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text within card is centered */
+    min-height: 180px; /* Adjust this value to control minimum card height */
 }
 
 .skills-category-card h3 {
@@ -321,7 +337,8 @@ body {
     padding-bottom: 10px;
     margin-bottom: 15px;
     font-size: 1.5em;
-    text-align: left; /* Override section h2 alignment */
+    text-align: center; /* Center the heading within the card */
+    width: 100%; /* Ensure underline spans full width within padding */
 }
 
 .skills-category-card ul {
@@ -329,17 +346,21 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px; /* Slightly increased gap between skill items */
+    justify-content: center; /* Center the bubbles horizontally */
+    margin-top: auto; /* Push bubbles to the center/bottom if content above is short */
+    margin-bottom: auto; /* Allow bubbles to be centered vertically */
 }
 
 .skills-category-card li {
-    background-color: var(--primary-bg);
+    background-color: var(--secondary-bg);
     color: var(--text-light);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
+    padding: 10px 18px; /* Slightly bigger padding for bubbles */
+    border-radius: 25px; /* More rounded for a 'bubblier' look */
+    font-size: 1em; /* Slightly bigger font size for bubbles */
     font-weight: 500;
     border: 1px solid var(--border-color);
+    white-space: nowrap; /* Prevent text wrapping inside bubbles */
 }
 
 
@@ -351,7 +372,7 @@ body {
 }
 
 .project-item {
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg); /* Darker background for project cards */
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--card-shadow);
     padding: 25px;
@@ -378,7 +399,7 @@ body {
 .project-thumbnail {
     max-width: 100%;
     height: 200px;
-    object-fit: contain; /* Show entire image */
+    object-fit: cover; /* Fill the box completely */
     object-position: center;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -391,7 +412,7 @@ body {
 
 /* Experience Section Styles - Remove bullet point from first line */
 .experience-item {
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg); /* Darker background for experience cards */
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--card-shadow);
@@ -438,7 +459,7 @@ body {
 .contact-form {
     max-width: 700px; /* Wider form as per image */
     margin: 0 auto;
-    background-color: var(--secondary-bg);
+    background-color: var(--primary-bg); /* Darker background for form */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--card-shadow);
@@ -472,7 +493,7 @@ body {
     box-sizing: border-box;
     font-family: var(--body-font);
     font-size: 1.1em; /* Larger font */
-    background-color: var(--primary-bg); /* Dark input background */
+    background-color: var(--secondary-bg); /* Darker input background */
     color: var(--text-light);
 }
 
@@ -496,7 +517,7 @@ body {
 }
 
 .send-message-button {
-    background-color: var(--secondary-bg); /* Match input background */
+    background-color: var(--primary-bg); /* Match input background */
     color: var(--accent-color); /* Blue text */
     padding: 15px 30px;
     border: 1px solid var(--accent-color); /* Blue border */
@@ -567,10 +588,35 @@ body {
     color: var(--accent-color);
 }
 
-.modal-content .button {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 15px;
+/* Project Modal Buttons Styling */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.modal-buttons .button {
+    background-color: var(--accent-color); /* Blue background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    display: flex; /* For icon and text alignment */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    padding: 12px 25px; /* Adjust padding */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    text-decoration: none;
+}
+
+.modal-buttons .button i {
+    font-size: 1.2em; /* Size for Font Awesome icons */
 }
 
 .close-button {
@@ -600,13 +646,6 @@ body {
     text-align: left;
 }
 
-.modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
@@ -615,6 +654,7 @@ body {
         padding: 0; /* Remove padding around wrapper */
         min-height: auto;
         max-height: none;
+        gap: 0; /* Remove gap when stacked */
     }
 
     .sidebar {
@@ -630,6 +670,7 @@ body {
         position: static; /* No sticky behavior */
         top: auto;
         align-self: auto;
+        max-height: none; /* No max-height on stacked sidebar */
     }
 
     .profile-card {
@@ -684,6 +725,8 @@ body {
         overflow-y: visible; /* Let content scroll naturally */
         border-radius: 0; /* No rounded corners when full width */
         box-shadow: none; /* No shadow when stacked */
+        max-height: none; /* No max-height on content area when stacked */
+        align-self: auto;
     }
 
     .section-content h2 {
@@ -716,5 +759,15 @@ body {
     .send-message-button {
         float: none; /* No float on small screens */
         width: 100%; /* Full width button */
+    }
+
+    .modal-content {
+        width: 95%; /* Make modal content a bit wider on small screens */
+        padding: 25px;
+    }
+    .close-button {
+        font-size: 2.5em;
+        top: 10px;
+        right: 15px;
     }
 }
