@@ -1,14 +1,15 @@
 /* Basic Reset & Global Styles */
 :root {
+    /* Colors */
     --primary-bg: #1a1a1a; /* Dark background */
     --secondary-bg: #2b2b2b; /* Slightly lighter dark for cards and sidebar */
-    --accent-color: #007bff; /* Primary blue accent */
+    --accent-color: #B3EBF2; /* Primary accent */
     --text-light: #e0e0e0; /* Light text for dark backgrounds */
     --text-muted: #a0a0a0; /* Muted text for secondary info */
     --border-color: #444; /* Darker border for separation */
     --card-shadow: rgba(0, 0, 0, 0.4); /* Stronger shadow for floating effect */
 
-    /* Font Families - Uncomment if you use Google Fonts */
+    /* Fonts */
     /* --heading-font: 'Montserrat', sans-serif; */
     /* --body-font: 'Roboto', sans-serif; */
     --heading-font: 'Arial', sans-serif; /* Fallback */
@@ -22,8 +23,8 @@
 }
 
 html, body {
-    height: 100%; /* Ensure html and body take full height */
-    overflow: hidden; /* Prevent default scrolling on html/body */
+    height: 100%; 
+    overflow: hidden; 
 }
 
 body {
@@ -33,60 +34,58 @@ body {
     color: var(--text-light);
 }
 
-/* Portfolio Wrapper - Main Layout */
+/* Main Layout (Portfolio Wrapper) */
 #portfolio-wrapper {
     display: flex;
-    justify-content: center; /* Center the whole wrapper */
-    min-height: 100%; /* Ensure wrapper takes at least full viewport height */
-    padding: 30px; /* Padding around the whole wrapper */
-    gap: 30px; /* Space between sidebar and content area */
-    overflow-y: auto; /* Allow the entire portfolio wrapper to scroll if content exceeds viewport */
+    justify-content: center; 
+    min-height: 100%;
+    padding: 30px;
+    gap: 30px; 
+    overflow-y: auto; 
 }
 
-/* Scrollbar Styling (for Webkit and Firefox) */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 5px; /* thinner scrollbar */
-    height: 5px; /* for horizontal scrollbars */
+    width: 5px;
+    height: 5px; 
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--primary-bg); /* Match the background of the scrolling container */
+    background: var(--primary-bg); 
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-muted); /* Muted gray */
+    background: var(--text-muted); 
     border-radius: 10px;
-    border: 2px solid var(--primary-bg); /* Creates a slight border effect, can be adjusted */
+    border: 2px solid var(--primary-bg); 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #777; /* Slightly darker gray on hover */
+    background: #777; 
 }
 
-/* For Firefox (limited styling options) */
-html {
-    scrollbar-color: var(--text-muted) var(--primary-bg); /* thumb track */
-    scrollbar-width: thin; /* auto | thin | none */
+html { /* For Firefox (limited styling options) */
+    scrollbar-color: var(--text-muted) var(--primary-bg); 
+    scrollbar-width: thin; 
 }
 
-
-/* Sidebar Styling - Floating with Rounded Corners */
+/* Sidebar Styling (Floating with Rounded Corners) */
 .sidebar {
-    width: 300px; /* Fixed width for sidebar */
+    width: 300px; 
     background-color: var(--secondary-bg);
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
-    overflow-y: auto; /* Allow sidebar content to scroll if it overflows */
-    border-radius: 15px; /* Rounded corners for the sidebar */
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
-    max-height: calc(100vh - 60px); /* Limit sidebar height to fit within viewport padding */
-    position: sticky; /* Make it sticky within its parent scroll container */
-    top: 30px; /* Aligned with top padding of wrapper */
-    align-self: flex-start; /* Align to the top of the flex container */
+    box-shadow: 0 5px 20px var(--card-shadow);
+    overflow-y: auto; 
+    border-radius: 15px; 
+    flex-shrink: 0; 
+    max-height: calc(100vh - 60px);
+    position: sticky; 
+    top: 30px; 
+    align-self: flex-start; 
 }
 
 .profile-card {
@@ -97,23 +96,23 @@ html {
 .sidebar-profile-picture {
     width: 150px;
     height: 150px;
-    /* border-radius: 50%; /* Circular image */
-    object-fit: contain ; /* Changed to 'contain' to ensure whole face appears */
-    object-position: center; /* Ensure face is centered */
-    border: 4px solid var(--accent-color);
-    box-shadow: 0 0 15px var(--card-shadow);
+    border-radius: 50%; /* Circular image */
+    object-fit: cover ;
+    object-position: center; 
+    border: 2px solid var(--accent-color);
+    /* box-shadow: 0 0 15px var(--card-shadow); */
     margin-bottom: 15px;
 }
 
 .profile-name {
     font-family: var(--heading-font);
-    font-size: 1.8em;
+    font-size: 1.9em;
     color: var(--text-light);
     margin-bottom: 5px;
 }
 
 .profile-title {
-    font-size: 1em;
+    font-size: 1.3em;
     color: var(--text-muted);
 }
 
@@ -135,7 +134,7 @@ html {
     color: var(--text-light);
     padding: 12px 20px;
     border-radius: 8px;
-    text-align: center; /* Centered text */
+    text-align: center;
     text-decoration: none;
     font-family: var(--heading-font);
     font-weight: 600;
@@ -144,19 +143,19 @@ html {
 
 .nav-button:hover {
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
 }
 
 .nav-button.active {
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-light);
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
 /* Contact Info in Sidebar - Bigger Icons, Bold Title, Info Below */
 .contact-info {
-    width: 100%;
+    width: 90%;
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid var(--border-color);
@@ -164,48 +163,49 @@ html {
 
 .info-item {
     display: flex;
-    align-items: center; /* Align icon and text vertically */
-    margin-bottom: 18px; /* More space between items */
+    align-items: center;
+    margin-bottom: 18px;
     color: var(--text-muted);
 }
 
 .info-item .icon {
-    font-size: 1.8em; /* Bigger icon */
-    margin-right: 15px; /* More space to the right of icon */
+    font-size: 1.5em;
+    margin-right: 18px;
     color: var(--accent-color);
-    width: 30px; /* Fixed width for icon to align text */
+    width: 30px;
     text-align: center;
 }
 
 .info-item div {
     display: flex;
-    flex-direction: column; /* Stack title and detail */
+    flex-direction: column;
     align-items: flex-start;
 }
 
 .info-title {
     font-weight: bold;
-    color: white; /* Bold white letters */
+    color: var(--text-light); 
     font-size: 0.9em;
-    margin-bottom: 2px; /* Small space between title and detail */
+    margin-bottom: 2px;
 }
 
 .info-detail {
     font-size: 1em;
-    color: var(--text-muted); /* Actual information */
+    color: var(--text-muted);
 }
 
-/* Social Links in Sidebar - Font Awesome Icons and Custom Logo */
+/* Social Links in Sidebar */
 .social-links-sidebar {
     margin-top: 20px;
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 .social-links-sidebar a {
-    font-size: 1.3em; /* Icon size for Font Awesome */
-    width: 45px; /* Bigger button area */
-    height: 45px; /* Bigger button area */
+    font-size: 1.3em; 
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: var(--primary-bg);
     color: var(--accent-color);
@@ -214,43 +214,47 @@ html {
     align-items: center;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .social-links-sidebar a:hover {
     background-color: var(--accent-color);
-    color: white;
+    color: var(--text-light);
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for the Analyst Hive logo (image) */
-.social-links-sidebar a .analyst-hive-logo {
-    width: 32px; /* Set your desired size */
-    height: 32px; /* Set your desired size */
-    border-radius: 8px; /* Slightly rounded corners for the logo itself */
-    object-fit: contain; /* Ensure the whole logo is visible */
-    padding: 2px; /* Small internal padding if the logo has transparent edges */
+.social-links-sidebar a i {
+    font-size: 1.3em;
 }
 
+.social-links-sidebar a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 2px;
+}
 
-/* Content Area Styling - Finishes close to last info & Scrollable */
+/* Content Area Styling */
 .content-area {
-    flex-grow: 1; /* Allows it to take available width */
-    flex-shrink: 1; /* Allows it to shrink if needed */
-    max-width: 900px; /* Limit content width for readability */
-    background-color: var(--secondary-bg); /* Background for content area box */
-    border-radius: 15px; /* Rounded corners for content area */
-    box-shadow: 0 5px 20px var(--card-shadow); /* Stronger shadow */
-    padding: 30px 40px; /* Padding inside content box */
-    overflow-y: auto; /* Allows content within this box to scroll independently */
-    max-height: calc(100vh - 60px); /* Limit content area height to fit within viewport padding */
-    align-self: flex-start; /* Align to the top of the flex container */
+    flex-grow: 1;
+    flex-shrink: 1; 
+    max-width: 900px; 
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--card-shadow);
+    padding: 30px 40px;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+    align-self: flex-start;
 }
 
 .container {
-    /* No padding needed here as content-area handles it */
-    padding: 0;
+    padding: 0; 
 }
 
-/* Section Content - Hidden by Default */
+/* Section Content */
 .section-content {
     display: none; /* Hidden by default, JavaScript shows them */
     opacity: 0;
@@ -264,9 +268,10 @@ html {
     transform: translateY(0);
 }
 
+/* About Me Styles */
 .section-content h2 {
     font-family: var(--heading-font);
-    font-size: 3em; /* Slightly bigger title */
+    font-size: 3em;
     color: var(--text-light);
     margin-bottom: 30px;
     position: relative;
@@ -286,66 +291,100 @@ html {
     left: 0;
 }
 
-
-/* About Me Specific Styles */
 #about-me .about-text p {
     margin-bottom: 15px;
     color: var(--text-light);
     font-size: 1.05em;
 }
 
-#about-me h3 {
-    font-size: 2em;
+/* Common Styles for "What I'm Doing" and "Skills and Tools" section headers */
+.section-subsection-title {
+    font-size: 2em; 
     color: var(--text-light);
     margin-top: 40px;
     margin-bottom: 25px;
     text-align: center;
+    position: relative;
+    padding-bottom: 10px;
 }
 
+.section-subsection-title::after {
+    content: '';
+    display: block;
+    width: 60px; 
+    height: 3px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Common Styles for "What I'm Doing" and "Skills and Tools" cards */
+.common-card-style {
+    background-color: var(--primary-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.common-card-style:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow); 
+}
+
+/* Common Styles for titles inside "What I'm Doing" and "Skills and Tools" cards */
+.card-inner-title {
+    font-family: var(--heading-font);
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-top: 0; 
+    margin-bottom: 15px; 
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card-inner-title::after {
+    content: '';
+    display: block;
+    width: 40px; 
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+/* What I'm Doing Section */
 .what-im-doing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-.service-card {
-    background-color: var(--primary-bg); /* Darker background for service cards */
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 4px 15px var(--card-shadow);
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card h4 {
-    font-family: var(--heading-font);
-    color: var(--accent-color);
-    font-size: 1.4em;
-    margin-bottom: 10px;
+/* Apply common card style to service cards */
+.service-card { /* Inherits common-card-style */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .service-card p {
     color: var(--text-muted);
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-/* Merged Skills Section */
-.merged-skills-section {
-    margin-top: 60px; /* Space from What I'm Doing */
-}
-
-.merged-skills-section h2 {
-    font-size: 2.2em; /* Slightly smaller than main section title */
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.merged-skills-section h2::after {
-    left: 50%;
-    transform: translateX(-50%);
+/* Skills Section */
+.skills-section {
+    margin-top: 60px;
 }
 
 .skills-grid {
@@ -354,28 +393,13 @@ html {
     gap: 25px;
 }
 
-.skills-category-card {
-    background-color: var(--primary-bg); /* Darker background for skills cards */
-    padding: 15px; /* Reduced padding for less height */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--card-shadow);
-    display: flex; /* Use flexbox for centering content */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Ensure text within card is centered */
-    min-height: 180px; /* Adjust this value to control minimum card height */
-}
-
-.skills-category-card h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    text-align: center; /* Center the heading within the card */
-    width: 100%; /* Ensure underline spans full width within padding */
+/* Apply common card style to skills category cards */
+.skills-category-card { /* Inherits common-card-style */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .skills-category-card ul {
@@ -383,23 +407,22 @@ html {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px; /* Slightly increased gap between skill items */
-    justify-content: center; /* Center the bubbles horizontally */
-    margin-top: auto; /* Push bubbles to the center/bottom if content above is short */
-    margin-bottom: auto; /* Allow bubbles to be centered vertically */
+    gap: 12px; 
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto; 
 }
 
 .skills-category-card li {
     background-color: var(--secondary-bg);
     color: var(--text-light);
-    padding: 10px 18px; /* Slightly bigger padding for bubbles */
-    border-radius: 25px; /* More rounded for a 'bubblier' look */
-    font-size: 1em; /* Slightly bigger font size for bubbles */
+    padding: 10px 18px; 
+    border-radius: 25px;
+    font-size: 1em;
     font-weight: 500;
     border: 1px solid var(--border-color);
-    white-space: nowrap; /* Prevent text wrapping inside bubbles */
+    white-space: nowrap;
 }
-
 
 /* Project Section Styles */
 .project-grid {
@@ -578,7 +601,7 @@ html {
 
 .send-message-button:hover {
     background-color: var(--accent-color); /* Fill with blue on hover */
-    color: white;
+    color: var(--text-light);
     border-color: var(--accent-color);
 }
 
@@ -643,7 +666,7 @@ html {
 
 .modal-buttons .button {
     background-color: var(--accent-color); /* Blue background */
-    color: white; /* White text */
+    color: var(--text-light); /* White text */
     font-weight: bold; /* Bold text */
     display: flex; /* For icon and text alignment */
     align-items: center;
