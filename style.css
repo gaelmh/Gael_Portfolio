@@ -96,12 +96,12 @@ html { /* For Firefox (limited styling options) */
 .sidebar-profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular image */
+    border-radius: 50%; 
     object-fit: cover ;
     object-position: center; 
     border: 2px solid var(--accent-color);
-    /* box-shadow: 0 0 15px var(--card-shadow); */
-    margin-bottom: 15px;
+    box-shadow: 0 0 15px var(--card-shadow);
+    margin-bottom: 20px;
 }
 
 .profile-name {
@@ -268,7 +268,7 @@ html { /* For Firefox (limited styling options) */
     transform: translateY(0);
 }
 
-/* About Me Styles */
+/* About Me Style */
 .section-content h2 {
     font-family: var(--heading-font);
     font-size: 3em;
@@ -297,9 +297,10 @@ html { /* For Firefox (limited styling options) */
     font-size: 1.05em;
 }
 
-/* Common Styles for "What I'm Doing" and "Skills and Tools" section headers */
-.section-subsection-title {
-    font-size: 2em; 
+/* Titles for "What I'm Doing" (h3) and "Skills and Tools" (h2) sections */
+#about-me h3,
+.skills-section h2 {
+    font-size: 2.2em; /* Slightly smaller than main section title (3em) */
     color: var(--text-light);
     margin-top: 40px;
     margin-bottom: 25px;
@@ -308,10 +309,11 @@ html { /* For Firefox (limited styling options) */
     padding-bottom: 10px;
 }
 
-.section-subsection-title::after {
+#about-me h3::after,
+.skills-section h2::after {
     content: '';
     display: block;
-    width: 60px; 
+    width: 60px;
     height: 3px;
     background-color: var(--accent-color);
     position: absolute;
@@ -321,33 +323,38 @@ html { /* For Firefox (limited styling options) */
     border-radius: 2px;
 }
 
-/* Common Styles for "What I'm Doing" and "Skills and Tools" cards */
-.common-card-style {
+/* Styles for "What I'm Doing" cards */
+.service-card {
     background-color: var(--primary-bg);
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 15px var(--card-shadow);
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    min-height: 180px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.common-card-style:hover {
+.service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--card-shadow); 
+    box-shadow: 0 8px 20px var(--card-shadow); /* Enhanced shadow on hover */
 }
 
-/* Common Styles for titles inside "What I'm Doing" and "Skills and Tools" cards */
-.card-inner-title {
+/* Styles for titles inside "What I'm Doing" cards (h4) */
+.service-card h4 {
     font-family: var(--heading-font);
     color: var(--accent-color);
-    font-size: 1.4em;
-    margin-top: 0; 
+    font-size: 1.4em; 
+    margin-top: 0;
     margin-bottom: 15px; 
-    position: relative;
-    padding-bottom: 10px;
+    position: relative; 
+    padding-bottom: 10px; 
 }
 
-.card-inner-title::after {
+.service-card h4::after {
     content: '';
     display: block;
     width: 40px; 
@@ -360,26 +367,16 @@ html { /* For Firefox (limited styling options) */
     border-radius: 1px;
 }
 
-/* What I'm Doing Section */
+.service-card p {
+    color: var(--text-muted);
+    margin-top: auto; 
+    margin-bottom: auto; 
+}
+
 .what-im-doing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-}
-
-/* Apply common card style to service cards */
-.service-card { /* Inherits common-card-style */
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.service-card p {
-    color: var(--text-muted);
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 /* Skills Section */
@@ -393,13 +390,48 @@ html { /* For Firefox (limited styling options) */
     gap: 25px;
 }
 
-/* Apply common card style to skills category cards */
-.skills-category-card { /* Inherits common-card-style */
-    min-height: 180px;
-    display: flex;
+/* Styles for "Skills and Tools" category cards */
+.skills-category-card {
+    background-color: var(--primary-bg);
+    border-radius: 10px;
+    padding: 25px; 
+    box-shadow: 0 4px 15px var(--card-shadow); 
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    min-height: 180px; 
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.skills-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+/* Styles for titles inside "Skills and Tools" cards (h3) */
+.skills-category-card h3 {
+    font-family: var(--heading-font); 
+    color: var(--accent-color);
+    font-size: 1.4em; 
+    margin-top: 0;
+    margin-bottom: 15px; 
+    position: relative; 
+    padding-bottom: 10px; 
+}
+
+.skills-category-card h3::after {
+    content: '';
+    display: block;
+    width: 40px; 
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
 }
 
 .skills-category-card ul {
@@ -408,8 +440,8 @@ html { /* For Firefox (limited styling options) */
     display: flex;
     flex-wrap: wrap;
     gap: 12px; 
-    justify-content: center;
-    margin-top: auto;
+    justify-content: center; 
+    margin-top: auto; 
     margin-bottom: auto; 
 }
 
@@ -417,11 +449,11 @@ html { /* For Firefox (limited styling options) */
     background-color: var(--secondary-bg);
     color: var(--text-light);
     padding: 10px 18px; 
-    border-radius: 25px;
-    font-size: 1em;
+    border-radius: 25px; 
+    font-size: 1em; 
     font-weight: 500;
     border: 1px solid var(--border-color);
-    white-space: nowrap;
+    white-space: nowrap; 
 }
 
 /* Project Section Styles */
@@ -432,7 +464,7 @@ html { /* For Firefox (limited styling options) */
 }
 
 .project-item {
-    background-color: var(--primary-bg); /* Darker background for project cards */
+    background-color: var(--primary-bg); 
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--card-shadow);
     padding: 25px;
@@ -440,7 +472,7 @@ html { /* For Firefox (limited styling options) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    cursor: pointer; /* Indicate clickable */
+    cursor: pointer; 
 }
 
 .project-item:hover {
@@ -451,28 +483,63 @@ html { /* For Firefox (limited styling options) */
 .project-item h3 {
     color: var(--accent-color);
     margin-top: 0;
-    font-size: 1.8em; /* Project titles slightly smaller */
+    font-size: 1.6em;
     text-align: center;
     margin-bottom: 15px;
+    margin-bottom: 15px; 
+    position: relative; 
 }
 
+.project-item h3::after {
+    content: '';
+    display: block;
+    width: 40px; 
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+/* Modified .project-thumbnail to be a square container */
 .project-thumbnail {
     max-width: 100%;
-    height: 200px;
-    object-fit: contain; /* Changed to 'contain' to ensure whole image fits */
-    object-position: center;
+    width: 100%; 
+    height: 0;
+    padding-bottom: 100%; 
+    position: relative;
     border-radius: 8px;
     margin-bottom: 15px;
     border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+/* New rule for the image inside .project-thumbnail */
+.project-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px; 
+}
+
+/* Specific styling for the rectangular thumbnail for "Soccer Starting XI Prediction" */
+.project-item[data-project-id="soccer-xi"] .project-thumbnail {
+    padding-bottom: 66.5%;
 }
 
 .project-item .hidden-details {
-    display: none; /* Hide details initially, JS will copy to modal */
+    display: none;
 }
 
-/* Experience Section Styles - Remove bullet point from first line */
+/* Experience Section Styles */
 .experience-item {
-    background-color: var(--primary-bg); /* Darker background for experience cards */
+    background-color: var(--primary-bg); 
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px var(--card-shadow);
