@@ -45,8 +45,8 @@ body {
 
 /* Scrollbar Styling (for Webkit and Firefox) */
 ::-webkit-scrollbar {
-    width: 8px; /* thinner scrollbar */
-    height: 8px; /* for horizontal scrollbars */
+    width: 5px; /* thinner scrollbar */
+    height: 5px; /* for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-track {
@@ -55,18 +55,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-color); /* Use your accent color */
+    background: var(--text-muted); /* Muted gray */
     border-radius: 10px;
     border: 2px solid var(--primary-bg); /* Creates a slight border effect, can be adjusted */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0056b3; /* Darker accent color on hover */
+    background: #777; /* Slightly darker gray on hover */
 }
 
 /* For Firefox (limited styling options) */
 html {
-    scrollbar-color: var(--accent-color) var(--primary-bg); /* thumb track */
+    scrollbar-color: var(--text-muted) var(--primary-bg); /* thumb track */
     scrollbar-width: thin; /* auto | thin | none */
 }
 
@@ -97,8 +97,8 @@ html {
 .sidebar-profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular image */
-    object-fit: contain; /* Changed to 'contain' to ensure whole face appears */
+    /* border-radius: 50%; /* Circular image */
+    object-fit: contain ; /* Changed to 'contain' to ensure whole face appears */
     object-position: center; /* Ensure face is centered */
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 15px var(--card-shadow);
@@ -428,7 +428,7 @@ html {
 .project-item h3 {
     color: var(--accent-color);
     margin-top: 0;
-    font-size: 1.6em; /* Project titles slightly smaller */
+    font-size: 1.8em; /* Project titles slightly smaller */
     text-align: center;
     margin-bottom: 15px;
 }
