@@ -3,7 +3,7 @@
     /* Colors */
     --primary-bg: #1a1a1a; /* Dark background */
     --secondary-bg: #2b2b2b; /* Slightly lighter dark for cards and sidebar */
-    --accent-color: #1E90FF; /* Primary accent - Dodger Blue #1E90FF - Blue #00678a - Gold #bfa100 */
+    --accent-color: #bfa100; /* Primary accent - Dodger Blue #1E90FF - Blue #00678a - Gold #bfa100 */
     --text-light: #e0e0e0; /* Light text for dark backgrounds */
     --text-muted: #a0a0a0; /* Muted text for secondary info */
     --border-color: #444; /* Darker border for separation */
@@ -394,7 +394,7 @@ html { /* For Firefox (limited styling options) */
 .skills-category-card {
     background-color: var(--primary-bg);
     border-radius: 10px;
-    padding: 15px; 
+    padding: 15px 25px 25px 25px; 
     box-shadow: 0 4px 15px var(--card-shadow); 
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
@@ -438,12 +438,10 @@ html { /* For Firefox (limited styling options) */
 .skills-category-card ul {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px; 
     justify-content: center; 
-    align-items: center;
-    width: 100%;
     margin-top: auto; 
     margin-bottom: auto; 
 }
@@ -457,9 +455,6 @@ html { /* For Firefox (limited styling options) */
     font-weight: 500;
     border: 1px solid var(--border-color);
     white-space: nowrap;
-    text-align: center;
-    width: fit-content;
-    min-width: 80px;
 }
 
 /* Project Section Styles */
@@ -490,10 +485,9 @@ html { /* For Firefox (limited styling options) */
 .project-item h3 {
     color: var(--accent-color);
     margin-top: 0;
-    font-size: 1.6em;
+    font-size: 1.4em;
     text-align: center;
     margin-bottom: 15px;
-    margin-bottom: 15px; 
     position: relative;
     padding-bottom: 10px; 
 }
@@ -526,6 +520,7 @@ html { /* For Firefox (limited styling options) */
 
 /* New rule for the image inside .project-thumbnail */
 .project-thumbnail img {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
