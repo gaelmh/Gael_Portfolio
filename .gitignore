@@ -1,0 +1,3 @@
+#These paths or files will be ignored
+.idea/
+*.iml
