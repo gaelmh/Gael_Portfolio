@@ -3,287 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gael Mota Hernandez - Data Science Portfolio</title>
+    <title>Gael Mota Hernandez - Data Scientist</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="portfolio-wrapper">
-        <aside class="sidebar">
-            <div class="profile-card">
-                <img src="Images/Headshot.jpg" alt="Gael Mota Hernandez Profile" class="sidebar-profile-picture">
-                <h1 class="profile-name">Gael Mota Hernandez</h1>
-                <p class="profile-title">Data Scientist</p>
-            </div>
-
-            <nav class="main-nav-sidebar">
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Gael Mota Hernandez</a>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#about-me" class="nav-button active" data-section="about-me">About Me</a></li>
-                    <li><a href="#projects" class="nav-button" data-section="projects">Projects</a></li>
-                    <li><a href="#experience" class="nav-button" data-section="experience">Experience</a></li>
-                    <li><a href="#contact-me" class="nav-button" data-section="contact-me">Contact Me</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact" class="cta-button">Contact Me</a></li>
                 </ul>
             </nav>
-
-            <div class="contact-info">
-                <div class="info-item">
-                    <span class="icon"><i class="fas fa-envelope"></i></span>
-                    <div>
-                        <span class="info-title">EMAIL</span>
-                        <span class="info-detail">gaelmhdz_03@outlook.com</span>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="icon"><i class="fas fa-phone-alt"></i></span>
-                    <div>
-                        <span class="info-title">PHONE</span>
-                        <span class="info-detail">+1 (773) 431-4830</span> </div>
-                </div>
-                <div class="info-item">
-                    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <div>
-                        <span class="info-title">LOCATION</span>
-                        <span class="info-detail">Chicago, IL, USA</span> </div>
-                </div>
-            </div>
-
-            <div class="social-links-sidebar">
-                <a href="https://www.linkedin.com/in/gaelmotahernandez/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/gaelmh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://analyst-hive.circle.so/u/fcfc935f" target="_blank" title="Analyst Hive"><img loading="eager" class="analyst-hive-logo" alt="Analyst Hive logo" src="https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSzBmRHdVPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--8054103afebfe4f6c170798c53a7ad603069f3ef/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNITUdscE9ncHpZWFpsY25zR09ncHpkSEpwY0ZRPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--d6fcae52537a39639a1a2b8c72a020b984e78eaf/analyst_hive_logo_transparent.png"></i></a>
-            </div>
-        </aside>
-
-        <main class="content-area">
-            <section id="about-me" class="section-content active">
-                <div class="container">
-                    <h2>About Me</h2>
-                    <div class="about-text">
-                        <p>Hello! My name is Gael Mota Hernandez, and since very young I have been deeply interested in numbers. Over the years, this interest eventually translated into a big passion for data and analytics, especially when applied to the sports industry.</p>
-                        <p>My academic journey and personal projects have equipped me with a robust skill set in ML modeling, statistical analysis, and visualization storytelling. As a Data Analyst I thrive on transforming complex datasets into clear, actionable insights that drive strategic decision-making.</p>
-                    </div>
-
-                    <h3>What I'm Doing</h3>
-                    <div class="what-im-doing-grid">
-                        <div class="service-card">
-                            <h4>Data Analysis & Modeling</h4>
-                            <p>Proficient in uncovering insights and building predictive models from complex datasets.</p>
-                        </div>
-                        <div class="service-card">
-                            <h4>Data Visualization</h4>
-                            <p>Creating compelling and interactive data visualizations to communicate complex findings.</p>
-                        </div>
-                        <div class="service-card">
-                            <h4>Machine Learning</h4>
-                            <p>Developing and deploying machine learning solutions for various business problems.</p>
-                        </div>
-                        <div class="service-card">
-                            <h4>Cloud Technologies</h4>
-                            <p>Experience with cloud platforms for scalable data solutions and deployment.</p>
-                        </div>
-                    </div>
-
-                    <div class="skills-section">
-                        <h2>Skills and Tools</h2>
-                        <div class="skills-grid">
-                            <div class="skills-category-card">
-                                <h3>Programming Languages</h3>
-                                <ul>
-                                    <li>Python</li>
-                                    <li>R</li>
-                                    <li>Java</li>
-                                    <li>SQL</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category-card">
-                                <h3>Database and Cloud</h3>
-                                <ul>
-                                    <li>AWS</li>
-                                    <li>Google Colab</li>
-                                    <li>Oracle SQL Developer</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category-card">
-                                <h3>Data Visualization</h3>
-                                <ul>
-                                    <li>Tableau</li>
-                                    <li>Matplotlib</li>
-                                    <li>Seaborn</li>
-                                    <li>Ggplot2</li>
-                                    <li>Excel Charts</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category-card">
-                                <h3>Libraries & Frameworks</h3>
-                                <ul>
-                                    <li>Pandas</li>
-                                    <li>NumPy</li>
-                                    <li>PySpark</li>
-                                    <li>Scikit-Learn</li>
-                                    <li>TensorFlow</li>
-                                    <li>Imbalanced-Learn</li>
-                                </ul>
-                            </div>
-                            <div class="skills-category-card">
-                                <h3>Other Tools</h3>
-                                <ul>
-                                    <li>Git/GitHub</li>
-                                    <li>Shiny (R & Python)</li>
-                                    <li>Google Apps Script</li>
-                                    <li>Microsoft Office</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects" class="section-content">
-                <div class="container">
-                    <h2>Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-item" data-project-id="nba-free-throw">
-                            <h3>NBA Free Throw Accuracy</h3>
-                            <img src="Images/Thumbnails/FreeThrowProjectThumbnail.jpg" alt="NBA Free Throw Accuracy Thumbnail" class="project-thumbnail">
-                            <span class="hidden-details" id="details-nba-free-throw"
-                                data-github-url="https://github.com/gaelmh/NBA-Free-Throw-Accuracy"
-                                data-linkedin-url="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117327280/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU">
-                                <p class="project-summary">Through data visualizations, this project investigates NBA player statistics from the 1997-98 to the 2021-22 seasons to analyze factors affecting free throw accuracy and its correlation with MVP status in the NBA.</p>
-                                <p><strong>Technologies:</strong> R (tidyverse, GGally, corrplot, magrittr, ggforce, reshapeggplot)</p>
-                                <p><strong>Data Source:</strong> The data was taken from the "NBA Player Stats (1998-2022)" dataset from Kaggle.</p>
-                                <p><strong>Techniques:</strong> Data Filtering, and Visualizations.</p>
-                            </span>
-                        </div>
-
-                        <div class="project-item" data-project-id="healthcare-costs">
-                            <h3>Understanding Healthcare Costs – A Generalized Approach</h3>
-                            <img src="Images/Thumbnails/HealthcareCostsProjectThumbnail.jpg" alt="Understanding Healthcare Costs Project Thumbnail" class="project-thumbnail">
-                            <span class="hidden-details" id="details-healthcare-costs"
-                                data-github-url="https://github.com/gaelmh/Understanding-Healthcare-Costs#understainding-healthcare-costs"
-                                data-linkedin-url="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117659564/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU">
-                                <p class="project-summary">Through generalized linear models, this project investigates healthcare data to analyze the impact of demographic and lifestyle factors on healthcare costs.</p>
-                                <p><strong>Technologies:</strong> R (tidyverse, caret, lmtest, broom, car, MASS, fastDummies)</p>
-                                <p><strong>Data Source:</strong> The data was taken from the “Medical Costs Personal” dataset from Kaggle.</p>
-                                <p><strong>Techniques:</strong> Linear Regression, Logistic Regression, and Analysis of Variance (ANOVA).</p>
-                            </span>
-                        </div>
-
-                        <div class="project-item" data-project-id="boot-brand">
-                            <h3>Boot Brand Preference Among Soccer Player – A Machine Learning Approach</h3>
-                            <img src="Images/Thumbnails/SoccerBootBrandPreferenceProjectThumbnail.jpg" alt="Boot Brand Preference Project Thumbnail" class="project-thumbnail">
-                            <span class="hidden-details" id="details-boot-brand"
-                                data-github-url="https://github.com/gaelmh/Boot-Brand-Preference"
-                                data-linkedin-url="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117948171/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU">
-                                <p class="project-summary">Leveraging machine learning modeling, this project investigates soccer boots data to predict the preferred boot brand of a given soccer player, and identify the key factors influencing their preference.</p>
-                                <p><strong>Technologies:</strong> Python (pandas, numpy, collections, scikit-learn, joblib, imblearn, sys, math, urllib, os, matplotlib, seaborn)</p>
-                                <p><strong>Data Source:</strong> The data was taken from the “Football Boots” dataset from Kaggle.</p>
-                                <p><strong>Techniques:</strong> Class Balancing, Feature Selection, and Machine Learning Modeling.</p>
-                            </span>
-                        </div>
-
-                        <div class="project-item" data-project-id="soccer-xi">
-                            <h3>Soccer Starting XI Prediction</h3>
-                            <img src="Images/Thumbnails/SoccerStartingXIProjectThumbnail.png" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
-                            <span class="hidden-details" id="details-soccer-xi"
-                                data-github-url="https://github.com/gaelmh/Soccer-Starting-XI"
-                                data-linkedin-url="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1733244193743/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU">
-                                <p class="project-summary">Leveraging AWS tools and machine learning models, this project investigates soccer match data to predict whether a soccer player will be in the starting lineup for an upcoming game.</p>
-                                <p><strong>Technologies:</strong> Python (pandas, numPy, scikit-learn, imblearn, matplotlib, seaborn, boto3), Apache Spark (PySpark), AWS (S3, Athena)</p>
-                                <p><strong>Data Source:</strong> The data was taken from the “Football Data from TransferMarkt” dataset from Kaggle.</p>
-                                <p><strong>Techniques:</strong> AWS tools (EMR, S3, and Athena), Class Balancing, Data Staging and Querying, and Modeling.</p>
-                            </span>
-                        </div>
-
-                        <div class="project-item" data-project-id="predicting-healthcare">
-                            <h3>Predicting Healthcare Costs – A Machine Learning Approach</h3>
-                            <img src="Images/Thumbnails/HospitalBalancePredictionProjectThumbnail.png" alt="Predicting Healthcare Costs Project Thumbnail" class="project-thumbnail">
-                            <span class="hidden-details" id="details-predicting-healthcare"
-                                data-github-url="https://github.com/gaelmh/Predicting-Healthcare-Costs"
-                                data-linkedin-url="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1743566649828/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU">
-                                <p class="project-summary">Leveraging Google Colab's GPU-Acceleration, machine learning modeling, and interactive web development, this project investigates New York healthcare data to estimate total hospital charges for a patient.</p>
-                                <p><strong>Technologies:</strong> Python (pandas, numPy, SciPy, matplotlib, seaborn, scikit-learn, cuML, LightGBM, XGBoost, TensorFlow, Shiny, IPython/Jupyter, Joblib, os, json, itertools), GPU-accelerated Computing (cuDF, cuPY)</p>
-                                <p><strong>Data Source:</strong> The data was taken from the New York Government Health Data website.</p>
-                                <p><strong>Techniques:</strong> Google Colab’s GPU acceleration, Scaling, Encoding, Dimensionality Reduction, and Modeling.</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experience" class="section-content">
-                <div class="container">
-                    <h2>Experience</h2>
-                    <div class="experience-item">
-                        <h3>Data Analyst at Markable AI</h3>
-                        <p class="date">April 2025 – Present</p>
-                        <ul>
-                            <li>Automate merging and updating master files using Google Apps Script for streamlined data consolidation.</li>
-                            <li>Ensure data accuracy and automation efficiency through continuous updates.</li>
-                            <li>Enhance data analysis processes by implementing advanced statistical techniques.</li>
-                            <li>Develop interactive data visualizations to improve user comprehension.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <h3>Operations Intern at EXACT Sports</h3>
-                        <p class="date">September 2024 - November 2025</p>
-                        <ul>
-                            <li>Managed inventory by sorting, counting, and organizing stock of over 1000 units.</li>
-                            <li>Prepared shipping packages and created labels for 100+ domestic and international orders.</li>
-                            <li>Ensured accuracy and readiness for order fulfillment.</li>
-                            <li>Adhered to company and carrier requirements for timely deliveries.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <h3>Statistical Data Analyst Intern at DePaul University Statistical Consulting Center</h3>
-                        <p class="date">February 2024 – March 2024</p>
-                        <ul>
-                            <li>Conducted end-to-end statistical support for research projects in various sectors.</li>
-                            <li>Collaborated with university, non-profit, and government clients on two data analysis projects.</li>
-                            <li>Analyzed satisfaction surveys using non-parametric methods to detect significant changes.</li>
-                            <li>Created data visualizations to clearly communicate analytical insights to diverse audiences.</li>
-                            <li>Provided statistical guidance in experimental design, data cleaning, and analysis.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact-me" class="section-content">
-                <div class="container">
-                    <h2>Contact Form</h2>
-                    <form action="https://formspree.io/f/mjkovdbk" method="POST" class="contact-form">
-                        <div class="form-row">
-                            <input type="text" id="full-name" name="name" placeholder="Full name" required>
-                            <input type="email" id="email-address" name="_replyto" placeholder="Email address" required>
-                        </div>
-                        <div class="form-row"> <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-row"> <textarea id="your-message" name="message" rows="6" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="form-actions"> <button type="submit" class="send-message-button">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h3 id="modal-project-title"></h3>
-            <div id="modal-project-details"></div>
-            <div class="modal-buttons">
-                </div>
         </div>
-    </div>
+    </header>
 
-    <script src="script.js"></script>
+    <main>
+        <section id="about" class="hero-section">
+            <div class="container hero-layout">
+                <div class="hero-image">
+                    <img src="Images/Headshot.jpg" alt="A professional headshot of Gael Mota Hernandez.">
+                </div>
+                <div class="hero-text">
+                    <h1>Gael Mota Hernandez</h1>
+                    <h2>Data Scientist | Machine Learning & Sports Analytics</h2>
+                    <p>
+                        A data scientist specializing in transforming complex datasets into actionable insights. Passionate about leveraging machine learning and statistical analysis to solve real-world problems, with a keen interest in the sports industry.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:gaelmhdz_03@outlook.com">Email</a>
+                        <a href="https://www.linkedin.com/in/gaelmotahernandez/">LinkedIn</a>
+                        <a href="https://github.com/gaelmh">GitHub</a>
+                        <a href="https://analyst-hive.circle.so/u/fcfc935f">AnalystHive</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="Images/Thumbnails/HospitalBalancePredictionProjectThumbnail.png" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
+                        <h3>Predicting Healthcare Costs</h3>
+                        <p>WRITE DESCRIPTION HERE</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>Scikit-Learn</span><span>Google Colab</span><span>Shiny</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/Predicting-Healthcare-Costs" class="button">View on GitHub</a>
+                            <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1743566649828/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Thumbnails/SoccerStartingXIProjectThumbnail.png" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
+                        <h3>Soccer Starting XI Prediction</h3>
+                        <p>WRITE DESCRPTION HERE</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>AWS</span><span>PySpark</span><span>Scikit-Learn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/Soccer-Starting-XI" class="button">View on GitHub</a>
+                            <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1733244193743/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Thumbnails/SoccerBootBrandPreferenceProjectThumbnail.jpg" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
+                        <h3>Boot Brand Preference Among Soccer Player</h3>
+                        <p>WRITE DESCRPTION HERE</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>Scikit-Learn</span><span>Imbalanced-Learn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/Boot-Brand-Preference" class="button">View on GitHub</a>
+                            <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117948171/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
+                    </div>                        
+                    <div class="project-card">
+                        <img src="Images/Thumbnails/HealthcareCostsProjectThumbnail.jpg" alt="Healthcare Costs Project Thumbnail" class="project-thumbnail">
+                        <h3>Understanding Healthcare Costs</h3>
+                        <p>WRITE DESCRIPTION HERE</p>
+                        <div class="tech-tags">
+                            <span>R</span><span>Caret</span><span>ANOVA</span><span>Linear Regression</span><span>Logistic Regression</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/Understanding-Healthcare-Costs#understainding-healthcare-costs" class="button">View on GitHub</a>
+                            <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117659564/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/FreeThrowProjectThumbnail.jpg" alt="NBA Free Throw Accuracy Project Thumbnail" class="project-thumbnail">
+                        <h3>NBA Free Throw Accuracy</h3>
+                        <p>WRITE DESCRIPTION HERE</p>
+                        <div class="tech-tags">
+                            <span>R</span><span>ggplot2</span><span>Tidyverse</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/NBA-Free-Throw-Accuracy" class="button">View on GitHub</a>
+                            <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117327280/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-skills-section">
+            <div class="container two-column-layout">
+                <div class="experience-column">
+                    <h2>Experience</h2>
+                    <div class="timeline-item">
+                        <h3>Data Analyst Freelancer</h3>
+                        <p class="company">Markable AI | Remote | Apr 2024 – Present</p>
+                        <ul>
+                            <li>Developed interactive data visualizations via Google Apps Script, which were integrated into the newest version of the mobile application to improve user comprehension, increasing data accessibility by 30%.</li>
+                            <li>Automated merging and updating master files using Google Apps Script, streamlining data consolidation, and reducing manual overhead by an estimated 20%.</li>
+                            <li>Ensured data accuracy and automation efficiency through continuous updates, improving data reliability for key business processes.</li>
+                            <li>Collaborated with product and sales teams to understand data needs and deliver tailored analytical solutions.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Statistical Data Analyst Intern</h3>
+                        <p class="company">DePaul University SCC | Chicago, Il | Feb 2024 - Mar 2024</p>
+                        <ul>
+                            <li>Provided end-to-end statistical support across all stages of quantitative research for university, non-profit, and government clients, from experimental design to data analysis.</li>
+                            <li>Collaborated on 2 data analysis projects, delivering actionable insight that directly informed and optimized client strategic planning.</li>
+                            <li>Conducted comparative analysis of satisfaction surveys using non-parametric methods (e.g., Wilcoxon Signed Rank Test), identifying statistically significant changes and guiding evidence-based recommendations.</li>
+                            <li>Designed and implemented over 10 data visualizations to clearly communicate complex analytical insight, significantly enhancing understanding for both technical and non-technical audiences.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Operations Intern</h3>
+                        <p class="company">EXACT Sports | Chicago, Il | Sep 2024 - Nov 2024</p>
+                        <ul>
+                            <li>Managed inventory by sorting, counting, and organizing stock of over one thousand units using Google Sheets, ensuring accuracy and readiness for order fulfillment.</li>
+                            <li>Prepared shipping packages and created labels for 100+ domestic and international orders, adhered to company and carrier requirements for timely deliveries.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="skills" class="skills-column">
+                    <h2>Skills & Tools</h2>
+                    <ul class="skills-list">
+                        <li><strong>Programming:</strong> Python, R, SQL, Java</li>
+                        <li><strong>ML & Data Science:</strong> Pandas, NumPy, Scikit-Learn, TensorFlow, PySpark</li>
+                        <li><strong>Databases & Cloud:</strong> AWS (S3, EMR, Athena), Oracle SQL</li>
+                        <li><strong>Visualization:</strong> Tableau, Matplotlib, Seaborn</li>
+                        <LI><strong>Other Tools:</strong> GitHub, Google Apps Script, Shiny, Excel</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>I'm open to new opportunities. Feel free to send me a message.</p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="button">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Gael Mota Hernandez</p>
+        </div>
+    </footer>
+
 </body>
 </html>
