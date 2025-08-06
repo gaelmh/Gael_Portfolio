@@ -81,19 +81,6 @@ section {
     color: var(--primary-color);
 }
 
-/* .cta-button {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background: #004a80;
-    color: var(--white);
-} */
-
-
 /* --- Hero Section --- */
 .hero-section {
     background: var(--light-gray);
