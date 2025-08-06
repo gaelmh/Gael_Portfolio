@@ -81,7 +81,7 @@ section {
     color: var(--primary-color);
 }
 
-.cta-button {
+/* .cta-button {
     background: var(--primary-color);
     color: var(--white);
     padding: 10px 20px;
@@ -91,7 +91,7 @@ section {
 .cta-button:hover {
     background: #004a80;
     color: var(--white);
-}
+} */
 
 
 /* --- Hero Section --- */
