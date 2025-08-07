@@ -147,6 +147,7 @@ section {
     object-fit: contain;
     object-position: center;
     background-color: var(--white);
+    padding-top: 10px;
 }
 
 .project-card h3 {
