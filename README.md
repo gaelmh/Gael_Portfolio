@@ -1,6 +1,7 @@
 ## About Me
 ### [Porfolio](https://gaelmh.github.io/Gael_Portfolio/)
-Hello! My name is Gael Mota Hernandez, I am a recently graduated Data Science student from DePaul University, born and raised in Mexico. Since very young, I was extremely interested in numbers often "tutoring" my younger brother with his math classes. This interes eventually tansformed into a big passion for data and analytics, especially when applied to the dynamic world of sports, with a particular focus on soccer.
+
+Hello! My name is Gael Mota Hernandez, I am a recently graduated Data Science student from DePaul University, born and raised in Mexico. Since very young, I was extremely interested in numbers, which eventually tansformed into a big passion for data and analytics, especially when applied to the dynamic world of sports, with a particular focus on soccer.
 
 I thrive on transforming complex datasets into clear, actionable insights that drive strategic decision-making. My academic journey and personal projects have equipped me with a robust skill set in modeling, machine learning, and compelling data visualization. I am adept at tackling real-world challenges, leveraging advanced analytical techniques to uncover patterns, predict outcomes, and optimize processes. I am eager to apply my analytical prowess and problem-solving abilities to contribute to innovative teams and impactful projects.
 

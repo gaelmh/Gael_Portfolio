@@ -35,8 +35,9 @@
                 <div class="hero-text">
                     <h1>Gael Mota Hernandez</h1>
                     <h2>Data Scientist | Machine Learning & Sports Analytics</h2>
-                    <p>
-                        A data scientist specializing in transforming complex datasets into actionable insights. Passionate about leveraging machine learning and statistical analysis to solve real-world problems, with a keen interest in the sports industry.
+                    <p> A data scientist specializing in transforming complex datasets into actionable insights. 
+                        Passionate about leveraging machine learning and statistical analysis to solve real-world problems, 
+                        with a keen interest in the sports industry.
                     </p>
                     <div class="social-links">
                         <a href="mailto:gaelmhdz_03@outlook.com">Email</a>
@@ -53,9 +54,24 @@
                 <h2>Projects</h2>
                 <div class="project-grid">
                     <div class="project-card">
-                        <img src="Images/Thumbnails/HospitalBalancePredictionProjectThumbnail.png" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
+                        <img src="Images/Thumbnails/HospitalBalancePredictionProjectThumbnail.jpg" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
                         <h3>Predicting Healthcare Costs</h3>
-                        <p>WRITE DESCRIPTION HERE</p>
+                        <p>
+                            This analysis aimed to improve financial transparency in healthcare by developing a <strong>machine learning model</strong> 
+                            to estimate hospital total charges. The dataset was gathered from the New York Government Health Data website. 
+                            It contained over <strong>two million patient discharges</strong> from 2017 and was described by 
+                            <strong>34 initial features</strong> which were refined into <strong>139 features</strong> after preprocessing.<br> 
+                            
+                            <br><strong>XGBoost</strong> demonstrated the best performance, achieving an <strong>R<sup>2</sup> value of 0.85</strong>, 
+                            with LightGBM and Neural Network also achieving high performance. A feature importance analysis revealed 
+                            that <strong>"length_of_stay"</strong> was the most influential factor. Furthermore, the project further 
+                            included the utilization of an <strong>interactive Shiny web application</strong>, allowing users to input 
+                            personal and medical information to receive real-time cost predictions.<br> 
+                            
+                            <br>This research highlights the significant value of machine learning in healthcare cost prediction, offering 
+                            crucial insights for patients, insurance companies, and hospitals to optimize financial planning and decision-making 
+                            processes.
+                        </p>
                         <div class="tech-tags">
                             <span>Python</span><span>Scikit-Learn</span><span>Google Colab</span><span>Shiny</span>
                         </div>
@@ -65,9 +81,26 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="Images/Thumbnails/SoccerStartingXIProjectThumbnail.png" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
+                        <img src="Images/Thumbnails/SoccerStartingXIProjectThumbnail.jpg" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
                         <h3>Soccer Starting XI Prediction</h3>
-                        <p>WRITE DESCRPTION HERE</p>
+                        <p>
+                            This analysis aimed to predict whether a soccer player will be in the starting lineup for an upcoming game, 
+                            leveraging personal characteristics, performance metrics, and team attributes. The project utilized the 
+                            "Football Data from Transfermarkt" dataset, composed of <strong>10 CSV files</strong> containing <strong>543.88 MB</strong> 
+                            of clubs, games, and players data in European competitions. After cleaning, preprocessing, and feature engineering 
+                            the dataset used to train the models was reduced to approximately <strong>530,000 observations</strong> and 
+                            <strong>24 features</strong>.<br>
+                            
+                            <br>The <strong>Random Forest classifier</strong> achieved the best performance, with an <strong>accuracy of 94.11%</strong>, 
+                            <strong>precision of 97%</strong>, and <strong>recall of 91%</strong>. A feature importance analysis 
+                            revealed that <strong>"minutes played"</strong> and <strong>"percentage of previous starting lineup appearances"</strong>.
+                            This involved extensive use of <strong>AWS S3</strong> for data staging, <strong>AWS Athena</strong> for effective 
+                            querying and data selection, and <strong>AWS EMR (Elastic MapReduce)</strong> for distributed computing, 
+                            significantly accelerating data processing and model training.<br>
+                            
+                            <br>This research offers valuable predictive insights for coaches in the soccer industry and has real-world 
+                            applications in other team sports, enhancing strategic planning and team performance.
+                        </p>
                         <div class="tech-tags">
                             <span>Python</span><span>AWS</span><span>PySpark</span><span>Scikit-Learn</span>
                         </div>
@@ -79,18 +112,64 @@
                     <div class="project-card">
                         <img src="Images/Thumbnails/SoccerBootBrandPreferenceProjectThumbnail.jpg" alt="Soccer Starting XI Prediction Project Thumbnail" class="project-thumbnail">
                         <h3>Boot Brand Preference Among Soccer Player</h3>
-                        <p>WRITE DESCRPTION HERE</p>
+                        <p>
+                            This analysis aimed to accurately predict the preferred boot brand among soccer players and identify the 
+                            most influential factors affecting their choice. The study utilized the <strong>"Football Boots"</strong>
+                            dataset from Kaggle, containing <strong>3,939 samples</strong> and <strong>14 features</strong> after initial 
+                            preprocessing and class reduction to the three main brands (Nike, Adidas, Puma).<br>
+                            
+                            <br>Five machine learning models were trained, with the <strong>Decision Tree</strong> consistently 
+                            performing best, achieving <strong>high accuracy</strong> and <strong>F1 score</strong> across different settings. 
+                            Conversely, <strong>Ada Boosting</strong> was the weakest performer, with an <strong>accuracy of 54%</strong> and 
+                            an <strong>F1 score of 41%</strong>. Feature importance analysis consistently identified 
+                            <strong>"BootsTopPlayer"</strong> (indicating the most popular soccer player wearing those boots), 
+                            <strong>"BootsPosition"</strong>, and qq<strong>"BootsMaterial"</strong> as the most influential factors.<br>
+                            
+                            <br>These findings are crucial for brands to enhance marketing campaigns and guide product development to meet 
+                            evolving customer needs in the sportswear market.
+
+                        </p>
                         <div class="tech-tags">
                             <span>Python</span><span>Scikit-Learn</span><span>Imbalanced-Learn</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/gaelmh/Boot-Brand-Preference" class="button">View on GitHub</a>
                             <a href="https://www.linkedin.com/in/gaelmotahernandez/details/projects/1731117948171/single-media-viewer/?profileId=ACoAAD0sr1oBRU-g7rHenPy0sFhxgU6vSvExSdU" class="button-secondary">Read Project Write Up</a>
-                    </div>                        
+                    </div>
+                    <div class="project-card">
+                        <img src="Images/Thumbnails/StockExchangeProjectThumbnail.jpg" alt="Stock Exchange Project Thumbnail" class="project-thumbnail">
+                        <h3>Stock Exchange System</h3>
+                        <p>
+                            
+                        </p>
+                        <div class="tech-tags">
+                            <span>Java</span><span>OOP Principles</span><span>Design Patterns</span><span>Data Structures</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/gaelmh/Stock-Exchange-System" class="button">View on GitHub</a>
+                        </div>
+                    </div>                       
                     <div class="project-card">
                         <img src="Images/Thumbnails/HealthcareCostsProjectThumbnail.jpg" alt="Healthcare Costs Project Thumbnail" class="project-thumbnail">
                         <h3>Understanding Healthcare Costs</h3>
-                        <p>WRITE DESCRIPTION HERE</p>
+                        <p>
+                            This study aimed to understand the relationship between <strong>demographic</strong> and <strong>lifestyle</strong> 
+                            factors and their impact on medical costs. The data utilized for this analysis was the 
+                            <strong>"Medical Costs Personal Dataset</strong> from Kaggle, comprising <strong>1,338 observations</strong> 
+                            across <strong>7 distinct features</strong>.<br>
+
+                            <br><strong>Linear regression</strong> revealed that all variables significantly influenced log medical costs, 
+                            with <strong>smoking</strong> having the highest effect, followed by the number of children and region. 
+                            <br><strong>Logistic regression</strong> achieved <strong>90.67% accuracy</strong> in predicting whether medical costs 
+                            would <strong>exceed $9,500</strong>, highlighting age and region as statistically significant predictors. 
+                            <br>Finally, <strong>ANOVA</strong> demonstrated a clear and statistically <strong>significant link</strong> 
+                            between <strong>smoking</strong> and <strong>higher medical expenses</strong>, with smokers incurring, on average, 
+                            <strong>$23,614 more in costs</strong>.<br>
+                            
+                            <br>These findings offer valuable insights for healthcare practitioners, policymakers, and insurers, aiding in 
+                            evidence-based decision-making for healthcare financing, resource allocation, and policy formulation, particularly 
+                            regarding the financial burden of smoking.
+                        </p>
                         <div class="tech-tags">
                             <span>R</span><span>Caret</span><span>ANOVA</span><span>Linear Regression</span><span>Logistic Regression</span>
                         </div>
@@ -102,7 +181,9 @@
                     <div class="project-card">
                         <img src="Images/Thumbnails/FreeThrowProjectThumbnail.jpg" alt="NBA Free Throw Accuracy Project Thumbnail" class="project-thumbnail">
                         <h3>NBA Free Throw Accuracy</h3>
-                        <p>WRITE DESCRIPTION HERE</p>
+                        <p>
+
+                        </p>
                         <div class="tech-tags">
                             <span>R</span><span>ggplot2</span><span>Tidyverse</span>
                         </div>
