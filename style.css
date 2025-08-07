@@ -216,7 +216,7 @@ section {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 50px;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .timeline-item {
@@ -231,9 +231,9 @@ section {
     margin-bottom: 10px;
 }
 
-.skills-column {
+/* .skills-column {
     align-self: center;
-}
+} */
 
 .skills-column ul {
     list-style: none;
