@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,8 +114,8 @@
                         <h3>Boot Brand Preference Among Soccer Player</h3>
                         <p>
                             This analysis aimed to accurately predict the preferred boot brand among soccer players and identify the 
-                            most influential factors affecting their choice. The study utilized the <strong>"Football Boots"</strong>
-                            dataset from Kaggle, containing <strong>3,939 samples</strong> and <strong>14 features</strong> after initial 
+                            most influential factors affecting their choice. The study utilized the "Football Boots" dataset from 
+                            Kaggle, containing <strong>3,939 samples</strong> and <strong>14 features</strong> after initial 
                             preprocessing and class reduction to the three main brands (Nike, Adidas, Puma).<br>
                             
                             <br>Five machine learning models were trained, with the <strong>Decision Tree</strong> consistently 
@@ -140,7 +140,36 @@
                         <img src="Images/Thumbnails/StockExchangeProjectThumbnail.jpg" alt="Stock Exchange Project Thumbnail" class="project-thumbnail">
                         <h3>Stock Exchange System</h3>
                         <p>
+                            This project involved the design and implementation of a robust, object-oriented stock exchange simulation system 
+                            in Java, developed iteratively across multiple assignments. The primary aim was to create a modular and scalable 
+                            platform capable of managing financial instruments, processing trades, handling user interactions, and publishing 
+                            real-time market data.<br>
                             
+                            <br>The system's architecture rigorously adhered to core <strong>Object-Oriented Programming (OOP) principles</strong>.
+                            <br><strong>• Encapsulation</strong> was maintained through private data members and controlled access via public 
+                            methods. 
+                            <br><strong>• Polymorphism</strong> was extensively utilized through interfaces like Comparable and Tradable, 
+                            enabling flexible handling of diverse financial entities such as Price objects, Orders, and Quotes. 
+                            <br><strong>• Information hiding</strong> was paramount, with TradableDTO (Data Transfer Objects) used to safely 
+                            convey data without exposing internal object references.<br>
+                            
+                            <br>Furthermore, key design patterns were strategically applied to enhance functionality and maintainability:
+                            <br><strong>• Factory Pattern:</strong> A PriceFactory centralized the creation of immutable Price objects, 
+                            ensuring consistency and proper formatting.
+                            <br><strong>• Flyweight Pattern:</strong> The PriceFactory was further optimized to implement the Flyweight 
+                            pattern, ensuring that only a single Price object exists for any given value, significantly reducing memory footprint.
+                            <br><strong>• Singleton Pattern:</strong> UserManager, ProductManager, CurrentMarketTracker, and CurrentMarketPublisher 
+                            were implemented as Singletons to ensure a single, globally accessible instance for managing users, products, market 
+                            data tracking, and publication, respectively.
+                            <br><strong>• Facade Pattern:</strong> UserManager and ProductManager acted as Facades, simplifying complex 
+                            interactions with underlying user and product book management subsystems.
+                            <br><strong>• Observer Pattern:</strong> A CurrentMarketObserver interface, implemented by the User class, along with 
+                            CurrentMarketPublisher and CurrentMarketTracker, enabled real-time, decoupled updates of market information to 
+                            subscribed users.
+                            
+                            <br>This project is important as it demonstrates a comprehensive understanding of designing and building complex, 
+                            real-world applications using advanced OOP concepts and design patterns, crucial for developing reliable and scalable 
+                            financial systems.
                         </p>
                         <div class="tech-tags">
                             <span>Java</span><span>OOP Principles</span><span>Design Patterns</span><span>Data Structures</span>
@@ -154,9 +183,8 @@
                         <h3>Understanding Healthcare Costs</h3>
                         <p>
                             This study aimed to understand the relationship between <strong>demographic</strong> and <strong>lifestyle</strong> 
-                            factors and their impact on medical costs. The data utilized for this analysis was the 
-                            <strong>"Medical Costs Personal Dataset</strong> from Kaggle, comprising <strong>1,338 observations</strong> 
-                            across <strong>7 distinct features</strong>.<br>
+                            factors and their impact on medical costs. The data utilized for this analysis was the "Medical Costs Personal 
+                            Dataset" from Kaggle, comprising <strong>1,338 observations</strong> across <strong>7 distinct features</strong>.<br>
 
                             <br><strong>Linear regression</strong> revealed that all variables significantly influenced log medical costs, 
                             with <strong>smoking</strong> having the highest effect, followed by the number of children and region. 
@@ -182,7 +210,24 @@
                         <img src="Images/Thumbnails/FreeThrowProjectThumbnail.jpg" alt="NBA Free Throw Accuracy Project Thumbnail" class="project-thumbnail">
                         <h3>NBA Free Throw Accuracy</h3>
                         <p>
-
+                            This analysis studied the relationship between <strong>NBA players statistics</strong> like their position, 
+                            free throw attempts, and their MVP status, with their <strong>free throw accuracy</strong>, utilizing a 
+                            dataset of NBA player statistics gathered from Kaggle. Such dataset contained information from the 1997/98 to 
+                            the 2021/22 seasons, containing <strong>14573 observations</strong> and <strong>32 features</strong> before 
+                            data cleaning and preprocessing.<br>
+                            
+                            <br>The relationship was mainly studied through the creation of <strong>data visualizations</strong>, which 
+                            provided insights that include:
+                            <br><strong>• Positional Influence:</strong> Point guards and shooting guards generally exhibit better free throw 
+                            accuracy than centers and power forwards, suggesting a positional influence on free throw skills related to player roles.
+                            <br><strong>• Attempts vs. Accuracy:</strong> Contrary to intuition, a higher number of free throw attempts showed 
+                            a slight decrease in accuracy, indicating that other factors beyond sheer practice are involved.
+                            <br><strong>• MVP Status:</strong> Players who have earned the MVP title are more accurate and more likely to score 
+                            free throws than non-MVPs, despite the small number of MVP instances (approximately 25 MVPs in the dataset).<br>
+                            
+                            <br>Overall, the visualizations demonstrated the complexity of free throw accuracy, influenced by multiple factors 
+                            such as fatigue, pressure, and practice. The analysis also highlighted that players who score the most points 
+                            are more likely to be selected as MVPs, reinforcing the importance of scoring ability in elite player recognition.
                         </p>
                         <div class="tech-tags">
                             <span>R</span><span>ggplot2</span><span>Tidyverse</span>
