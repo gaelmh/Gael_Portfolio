@@ -144,27 +144,11 @@
                             platform capable of managing financial instruments, processing trades, handling user interactions, and publishing 
                             real-time market data.<br>
                             
-                            <br>The system's architecture rigorously adhered to core <strong>Object-Oriented Programming (OOP) principles</strong>.
-                            <br><strong>• Encapsulation</strong> was maintained through private data members and controlled access via public 
-                            methods. 
-                            <br><strong>• Polymorphism</strong> was extensively utilized through interfaces like Comparable and Tradable, 
-                            enabling flexible handling of diverse financial entities such as Price objects, Orders, and Quotes. 
-                            <br><strong>• Information hiding</strong> was paramount, with TradableDTO (Data Transfer Objects) used to safely 
-                            convey data without exposing internal object references.<br>
-                            
-                            <br>Furthermore, key design patterns were strategically applied to enhance functionality and maintainability:
-                            <br><strong>• Factory Pattern:</strong> A PriceFactory centralized the creation of immutable Price objects, 
-                            ensuring consistency and proper formatting.
-                            <br><strong>• Flyweight Pattern:</strong> The PriceFactory was further optimized to implement the Flyweight 
-                            pattern, ensuring that only a single Price object exists for any given value, significantly reducing memory footprint.
-                            <br><strong>• Singleton Pattern:</strong> UserManager, ProductManager, CurrentMarketTracker, and CurrentMarketPublisher 
-                            were implemented as Singletons to ensure a single, globally accessible instance for managing users, products, market 
-                            data tracking, and publication, respectively.
-                            <br><strong>• Facade Pattern:</strong> UserManager and ProductManager acted as Facades, simplifying complex 
-                            interactions with underlying user and product book management subsystems.
-                            <br><strong>• Observer Pattern:</strong> A CurrentMarketObserver interface, implemented by the User class, along with 
-                            CurrentMarketPublisher and CurrentMarketTracker, enabled real-time, decoupled updates of market information to 
-                            subscribed users.
+                            <br>The system's architecture adhered to core <strong>Object-Oriented Programming (OOP) principles</strong> like 
+                            <strong>encapsulation</strong>, <strong>polymorphism</strong> and <strong>information hiding</strong>, to develop a 
+                            robust, maintainable, and scalable system. Furthermore, key design patterns like <strong>Factory</strong>,
+                            <strong>Flyweight</strong>, <strong>Singleton</strong>, <strong>Facade</strong>, and <strong>Observer</strong>, 
+                            were strategically applied to enhance functionality and maintainability.
                             
                             <br>This project is important as it demonstrates a comprehensive understanding of designing and building complex, 
                             real-world applications using advanced OOP concepts and design patterns, crucial for developing reliable and scalable 
