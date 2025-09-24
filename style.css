@@ -81,6 +81,24 @@ section {
     color: var(--primary-color);
 }
 
+/* --- Hamburger Menu --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--dark-gray);
+    transition: all 0.3s ease-in-out;
+}
+
 /* --- Hero Section --- */
 .hero-section {
     background: var(--light-gray);
@@ -272,4 +290,79 @@ section {
     color: var(--white);
     text-align: center;
     padding: 20px 0;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: var(--white);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .main-nav ul.active {
+        display: flex;
+    }
+
+    .main-nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        text-align: center;
+    }
 }
